@@ -7,7 +7,7 @@ import NewPostProfile from './NewPostProfile/PostsProfile';
 const Profile=() => {
     return (
       <div>
-        <div className="profile">
+        <div className="profile content">
           <ProfileAvaMainText className="ProfileAvaMainText" />
           <InputPost className="InputPost"/>
           <NewPostProfile textPost="Привет!" countLike="15"/>

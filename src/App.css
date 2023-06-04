@@ -4,7 +4,7 @@
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
     grid-template-areas: "Header Header"
-    "Menu Profile";
+    "Menu Content";
    grid-gap: 15px;
    min-width: 370px;
 }
@@ -28,4 +28,8 @@
 }
 .borderRadius{
     border-radius: 35px;
+}
+.content{
+    display: grid;
+    grid-area: Content;
 }

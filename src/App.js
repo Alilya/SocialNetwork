@@ -12,8 +12,10 @@ function App() {
     <div className="mainSocialNetwork">
       <Header />
       <Menu />
-      {/* <Profile /> */}
+      <div className='content'>
+       {/* <Profile />  */}
       <Messages />
+      </div>
     </div>
   );
 }
