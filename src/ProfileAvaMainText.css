@@ -2,10 +2,13 @@
     display: grid;
     margin-top: 20px;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: "Img Text";
-    grid-gap: 60px;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: 
+        "Img Text Text"
+        "Input Input Button"; 
+    
     height: 371px;
+    max-width: 1000px;
     padding-top: 17px;
     padding-left: 5%;
     font-family: 'Montserrat Alternates';
@@ -36,38 +39,49 @@
     grid-area: Text;
     display: inline-flex;
     color: #291B1B;
-    margin-left: 10px;
 
 }
 .profileAbout li{
     list-style-type: none;
 } 
 .textInputLabel{
-    display: block;
-
+    display: grid;
+    grid-area: Input;
+    margin-top: 61px;
     height: 64px;
-    padding: 0.375rem 0.75rem;
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
+    padding: 1rem 5rem;
+   
     color: #212529;
-    border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 100%;
 
-    width: 745px;
-
-    left: 244px;
-    top: 367px;
-
+    width: 90%;
 
     background: #FFFFFF;
     border-radius: 52px;        
 }
-.textInput{
-    margin-bottom: 1rem;
-}
+
 *, *::before, *::after {
     box-sizing: border-box;
-  }
+}
+
+.catPaw{
+    width: 58px;
+    height: 58px;
+}
+.buttonCatPaw{
+    grid-area: Button;
+    display: flex;
+    justify-content: center;
+    margin-top: 61px;
+    border-radius: 50%;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    width: 60px;
+    height: 60px;
+}

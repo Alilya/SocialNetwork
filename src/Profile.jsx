@@ -1,10 +1,14 @@
+
 import './Profile.css'
 import ProfileAvaMainText from './ProfileAvaMainText';
 
 const Profile=() => {
     return (
-      <div className="profile">
-        <ProfileAvaMainText className='ProfileAvaMainText' />
+      <div>
+        <div className="profile">
+          <ProfileAvaMainText className="ProfileAvaMainText" />
+        </div>
+       
       </div>
     );
 

@@ -2,8 +2,8 @@ import './ProfileAvaMainText.css'
 const ProfileAvaMainText=() => {
     return (
       <div className="ProfileAvaMainText">
-        <div className='profileAva'>
-          <img src="https://cdnn11.img.sputnik.by/img/102768/82/1027688237_175:0:904:801_1920x0_80_0_0_ec162d86740126d12cfa9750eb48cbca.jpg" />
+        <div className="profileAva">
+          <img src="https://flomaster.club/uploads/posts/2023-01/1674276511_flomaster-club-p-kot-v-ochkakh-risunok-vkontakte-1.jpg" />
         </div>
         <div className="profileAbout">
           <ul>
@@ -12,14 +12,20 @@ const ProfileAvaMainText=() => {
             <li> Живу за счет женщины</li>
           </ul>
         </div>
-        <div className="textInput">
+
           <input
             type="text"
             placeholder="Поделитесь котиком"
-            className="textInputLabel">
-            </input>
+            className="textInputLabel"
+          ></input>
+          <button className="buttonCatPaw">
+            <img
+              src="https://pictures.pibig.info/uploads/posts/2023-04/1681417678_pictures-pibig-info-p-lapka-kota-risunok-vkontakte-4.png"
+              className="catPaw"
+            ></img>
+          </button>
         </div>
-      </div>
+
     );
 
 }

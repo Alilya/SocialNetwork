@@ -1,6 +1,5 @@
 .Menu {
-    width: 183px;
-    height: 371px;
+    width: 100%;
     margin-top:15px;
     margin-left:10px;
     
@@ -12,11 +11,11 @@
 }
 
 .Menu article{
-    margin:30px;
+    margin:50px;
     font-family: 'Montserrat Alternates';
     font-style: normal;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 18px;
     line-height: 32px;
     text-transform: uppercase;
 
