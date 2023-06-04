@@ -1,0 +1,26 @@
+.Menu {
+    width: 183px;
+    height: 371px;
+    margin-top:15px;
+    margin-left:10px;
+    
+    background: #EDEBE9;
+    border-radius: 35px;
+}
+.Menu :last-child{
+    padding-top: 30px;
+}
+
+.Menu article{
+    margin:30px;
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 32px;
+    text-transform: uppercase;
+
+    color: #303030;
+
+
+}

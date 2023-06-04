@@ -1,0 +1,73 @@
+.ProfileAvaMainText{
+    display: grid;
+    margin-top: 20px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "Img Text";
+    grid-gap: 60px;
+    height: 371px;
+    padding-top: 17px;
+    padding-left: 5%;
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+.profileAva{
+    grid-area: Img;
+    width: 200px;
+    height: 200px;
+}
+.profileAva img{
+    width: 200px;
+    height: 200px;
+    min-width: 10em;
+    min-height: 10em;
+    border-radius: 97px;
+}
+
+.profileAbout :last-child{
+    margin-top: 30px;
+}
+
+.profileAbout{
+    grid-area: Text;
+    display: inline-flex;
+    color: #291B1B;
+    margin-left: 10px;
+
+}
+.profileAbout li{
+    list-style-type: none;
+} 
+.textInputLabel{
+    display: block;
+
+    height: 64px;
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+
+    width: 745px;
+
+    left: 244px;
+    top: 367px;
+
+
+    background: #FFFFFF;
+    border-radius: 52px;        
+}
+.textInput{
+    margin-bottom: 1rem;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+  }

@@ -1,0 +1,24 @@
+.mainSocialNetwork{
+    display: grid;
+ 
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 1fr 8fr;
+    grid-template-areas: "Header Header"
+    "Menu Profile";
+}
+.header{
+    display: grid;
+    grid-area: Header;
+
+}
+
+.menu{
+    display: grid;
+    grid-area: Menu;
+    
+}
+.profile{
+    display: grid;
+    grid-area: Profile;
+  
+}
