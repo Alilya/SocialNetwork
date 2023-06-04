@@ -1,0 +1,46 @@
+.imgCatPawPost{
+    grid-area: Img;
+    width: 62px;
+    border-radius: 50%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.NewPostProfile{
+    display: grid;
+    grid-area: Post;
+ 
+   grid-template-rows: 1fr;
+   grid-template-columns: 2fr 8fr;
+   grid-template-areas: "Img Content";
+
+    margin-top: 30px;
+}
+.ContentPost{
+    grid-area: Content;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    color: #000000;
+}
+
+.like img{
+    width: 50px;
+}
+.likeButton{
+    width: 60px;
+    display: inline-block;
+    background-color: #fff;
+    border-color: #ffffff;
+}
+.countLike{
+    font-size: 15px;
+    color: #494848;
+}
+.like{
+    display: inline-block;
+
+}

@@ -1,34 +1,31 @@
 .mainSocialNetwork{
     display: grid;
  
-    grid-template-rows: 60px 1fr 1fr;
+    grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
     grid-template-areas: "Header Header"
-    "Menu Profile"
-    "Nothing Post";
-   
-}
-.header{
-    display: grid;
-    grid-area: Header;
-
+    "Menu Profile";
+   grid-gap: 15px;
+   min-width: 370px;
 }
 
-.menu{
-    display: grid;
-    grid-area: Menu;
-    
-}
-.profile{
-    display: grid;
-    grid-area: Profile;
-  
-}
-.NewPostProfile{
-    display: grid;
-    grid-area: Post;
-}
 .Nothing{
     display: grid;
     grid-area: Nothing;
+    
+}
+.textFamily{
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+}
+.backgroundColor{
+    background: #EDEBE9;
+}
+.backgroundColorItem{
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+}
+.borderRadius{
+    border-radius: 35px;
 }

@@ -1,0 +1,15 @@
+.profile{
+    display: grid;
+    grid-area: Profile;
+  
+    margin-right: 2%;
+    margin-left: 2%;
+
+    grid-template-rows: 1fr auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "AvaText"
+    "InputPost"
+    "Post";
+    grid-gap: 15px;
+}

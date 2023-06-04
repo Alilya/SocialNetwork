@@ -1,0 +1,46 @@
+
+.textInputLabel{
+    display: grid;
+    grid-area:  InputPost;
+   
+    height: 64px;
+    padding: 1rem 1rem;
+   
+    color: #212529;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 100%;
+    margin: 20px;
+    margin-right: 0px;
+    width: 80%;
+     
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.catPaw{
+    
+    height: 100%;
+}
+.buttonCatPaw{
+    grid-area: Button;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    width: 5em;
+    height: 5em;
+    margin-left: 1%;
+    margin-right: 5px;
+    
+}
+.InputPost{
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
