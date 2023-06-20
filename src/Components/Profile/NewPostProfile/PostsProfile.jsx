@@ -16,7 +16,7 @@ const NewPostProfile=(props) => {
                 src="https://mystickermania.com/cdn/stickers/cute-cats/cats-big-heart-512x512.png"
                 alt="like"
               />
-              <span className='countLike'>{props.countLike}</span>
+              <span className='countLike'> {props.countLike} </span>
             </button>
           </div>
         </div>

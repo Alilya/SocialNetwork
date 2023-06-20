@@ -1,10 +1,12 @@
+import { NavLink } from 'react-router-dom';
 import './Menu.css'
 const Menu=() => {
     return (
       <div className="Menu backgroundColor borderRadius">
-        <article className='textFamily'>Профиль</article>
-        <article className='textFamily'>Лента</article>
-        <article className='textFamily'>Настройки</article>
+        <NavLink to='/profile' className='textFamily'>Профиль</NavLink>
+        <NavLink to='/messages' className='textFamily'>Сообщения</NavLink>
+        <NavLink to='/news' className='textFamily'>Новости</NavLink>
+        <NavLink to='/settings' className='textFamily'>Настройки</NavLink>
       </div>
     );
 
