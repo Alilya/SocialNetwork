@@ -5,19 +5,15 @@
     grid-template-columns: 2fr 10fr;
     grid-template-areas: "Header Header"
     "Menu Content";
-   grid-gap: 15px;
-   min-width: 370px;
+    grid-gap: 15px;
+    min-width: 370px;
 }
 
 .Nothing{
     display: grid;
     grid-area: Nothing;
-    
 }
-.textFamily{
-    font-family: 'Montserrat Alternates';
-    font-style: normal;
-}
+
 .backgroundColor{
     background: #EDEBE9;
 }

@@ -1,4 +1,4 @@
-import './PostsProfile.css'
+import './NewPostsProfile.css'
 
 const NewPostProfile=(props) => {
     return (

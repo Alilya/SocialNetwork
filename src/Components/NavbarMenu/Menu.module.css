@@ -1,0 +1,53 @@
+.Menu {
+    grid-area: Menu;
+
+    width: 100%;
+    margin-left:15px;
+    height: 376px;
+
+    border-radius: 35px;
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    background: #EDEBE9;
+}
+.Menu :last-child{
+    display: flex;
+    padding-top: 55px;
+}
+
+.defaultMenu{
+    display: flex;
+
+    margin: 15px;
+    margin-left:25px;
+
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 32px;
+    text-transform: uppercase;
+
+    color: #303030;
+
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+}
+
+.active{
+    display: flex;
+
+    margin: 15px;
+    margin-left:25px;
+
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 32px;
+    text-transform: uppercase;
+
+    color: #7f7f7f;
+
+    font-family: 'Montserrat Alternates';
+    font-style: normal;
+}
