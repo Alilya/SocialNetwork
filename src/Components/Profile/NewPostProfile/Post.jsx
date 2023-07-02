@@ -1,13 +1,11 @@
 import NewPostProfile from './NewPostsProfile';
 
-let postDataBase = [
-  { id: 1, post: "Привет", countLike: "15" },
-  { id: 2, post: "Я люблю котиков", countLike: "45" },
-];
-let postsElements=postDataBase.map(post=>
-  <NewPostProfile textPost={post.post} countLike={post.countLike}/>
-)
-const Post=() => {
+
+const Post=(props) => {
+  
+  let postsElements=props.post.map(post=>
+    <NewPostProfile textPost={post.post} countLike={post.countLike}/>
+  )
   return(
     <div>
    {postsElements}

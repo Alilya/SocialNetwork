@@ -36,11 +36,9 @@
     margin: 20px;
     height: min-content;
 
-    border-radius: 20%;
-    border-bottom-left-radius: 0%;
-    border: 1px #000000 solid;
+    border-radius: 15%;
 
     width: max-content;
     padding: 20px;
-    background: #fffaf6;
+    background: #fcf5ee;
 }

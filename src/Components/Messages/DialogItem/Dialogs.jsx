@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './../Messages.module.css'
+import style from './../MessageItem/Messages.module.css'
 import { NavLink } from 'react-router-dom';
 
 
@@ -19,16 +19,4 @@ const DialogItem = (props) =>{
   );
 }
 
-
-let dialogsDataBase = [
-  { id: "1", name: "Alina" },
-  { id: "2", name: "Vika" },
-  { id: "3", name: "Nikita" },
-  { id: "4", name: "Pepe" },
-];
-
-
-let dialogsElements = dialogsDataBase.map((dialog) => 
-  <DialogItem id={dialog.id} name={dialog.name} />);
-
-export default dialogsElements;
+export default DialogItem;

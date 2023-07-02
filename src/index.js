@@ -3,13 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import state from './redux/state';
+import { BrowserRouter} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
+  <BrowserRouter>
   <React.StrictMode>
- <App/>
+    <App
+      post={state.profilePage.postDataBase}
+      messages={state.messagesPage.messagesDataBase}
+      dialogs={state.messagesPage.dialogsDataBase}
+    />
   </React.StrictMode>
+  </BrowserRouter>
 );
 
 
