@@ -9,17 +9,28 @@ import Profile from './Components/Profile/Profile';
 
 function App(props) {  
   return (
-      <div className="mainSocialNetwork">
-        <Header />
-        <Menu />
-        <div className="content">
-          <Routes>
-            <Route path="/profile" element={<Profile post={props.post}/>} />
-            <Route path="/messages/*" element={<MessagesAll messages={props.messages} dialogs={props.dialogs}/>} />
-          </Routes>
-        </div>
+    <div className="mainSocialNetwork">
+      <Header />
+      <Menu />
+      <div className="content">
+        <Routes>
+          <Route
+            path="/profile"
+            element={<Profile post={props.state.profilePage.postDataBase} addPost={props.addPost}/>}
+
+          />
+          <Route
+            path="/messages/*"
+            element={
+              <MessagesAll
+                messages={props.state.messagesPage.messagesDataBase}
+                dialogs={props.state.messagesPage.dialogsDataBase}
+              />
+            }
+          />
+        </Routes>
       </div>
- 
+    </div>
   );
 }
 

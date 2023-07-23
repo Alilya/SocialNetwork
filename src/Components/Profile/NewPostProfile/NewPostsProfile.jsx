@@ -1,4 +1,5 @@
-import './NewPostsProfile.css'
+import './NewPostsProfile.css';
+import React from "react";
 
 const NewPostProfile=(props) => {
     return (
@@ -16,7 +17,7 @@ const NewPostProfile=(props) => {
                 src="https://mystickermania.com/cdn/stickers/cute-cats/cats-big-heart-512x512.png"
                 alt="like"
               />
-              <span className='countLike'> {props.countLike} </span>
+              <span className="countLike"> {props.countLike} </span>
             </button>
           </div>
         </div>

@@ -10,6 +10,11 @@
     text-decoration: none;
    
 }
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates';
+
+}
 .dialogsItems{
     background: #EDEBE9;
     text-decoration: none;
@@ -41,4 +46,21 @@
     width: max-content;
     padding: 20px;
     background: #fcf5ee;
+}
+.sendText{
+    width: 60%;
+    min-width: 10%;
+    height: 60px;
+    margin: 30px;
+    border-radius: 10px;
+}
+.sendButton{
+    background-color: #fcf5ee;
+    color: #303030;
+    text-transform: uppercase;
+    width: max-content;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Montserrat Alternates';
 }

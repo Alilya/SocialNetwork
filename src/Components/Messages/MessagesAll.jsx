@@ -2,6 +2,7 @@ import React from 'react';
 import style from './MessageItem/Messages.module.css'
 import DialogItem from './DialogItem/Dialogs'
 import MessageItem from './MessageItem/Messages';
+import SendMessage from './SendMessage';
 
 const MessagesAll=(props) => {
   let messagesElements = props.messages.map(
@@ -13,8 +14,8 @@ const MessagesAll=(props) => {
     return (
       <div className={style.messages}>
         <div className={style.dialogsItems}>{dialogsElements}</div>
-
-        <div className={style.messageItems}>{messagesElements}</div>
+        <div className={style.messageItems}>{messagesElements} <SendMessage/> </div>
+       
       </div>
     );
 

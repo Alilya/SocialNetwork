@@ -8,8 +8,8 @@ const Profile=(props) => {
       <div>
         <div className="profile content">
           <ProfileAvaMainText className="ProfileAvaMainText" />
-          <InputPost className="InputPost"/>
-          <Post post={props.post}/>
+          <InputPost className="InputPost" addPost={props.addPost}/>
+          <Post post={props.post} />
         </div>
        
       </div>

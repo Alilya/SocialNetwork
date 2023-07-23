@@ -1,13 +1,14 @@
 import React from 'react'
 import './InputPost.css'
-const InputPost=() => {
+const InputPost=(props) => {
 
   let newPostElement=React.createRef();
-
   let addPost = () => {
-    let data = newPostElement.current.value;
-    alert(data);
+    let textPost = newPostElement.current.value;
+    props.addPost(textPost);
+    newPostElement.current.value="";
   };
+
     return (
         <div className="InputPost backgroundColor borderRadius">
           <textarea ref={newPostElement}

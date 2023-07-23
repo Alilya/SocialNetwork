@@ -1,13 +1,9 @@
-
+import {rerenderDomTree} from '../render'
 let state = {
     profilePage:{
         postDataBase :[
             { id: 1, post: "Привет", countLike: "15" },
             { id: 2, post: "Я люблю котиков", countLike: "45" },
-            { id: 3, post: "Привет", countLike: "15" },
-            { id: 4, post: "Я люблю котиков", countLike: "45" },
-            { id: 5, post: "Привет", countLike: "15" },
-            { id: 6, post: "Я люблю котиков", countLike: "45" },
         ],    
     },
     messagesPage:{
@@ -29,6 +25,18 @@ let state = {
           ],
     }
  
+    
 };
+
+export let addPost = (postMessage) =>{
+    let newPost={
+        id:7,
+        post: postMessage,
+        countLike:"11",
+    }
+    state.profilePage.postDataBase.unshift(newPost);
+    rerenderDomTree(state);
+}
+
 
 export default state;
