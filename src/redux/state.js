@@ -2,9 +2,10 @@ import {rerenderDomTree} from '../render'
 let state = {
     profilePage:{
         postDataBase :[
-            { id: 1, post: "Привет", countLike: "15" },
+            {id: 1, post: "Привет", countLike: "15" },
             { id: 2, post: "Я люблю котиков", countLike: "45" },
-        ],    
+        ], 
+        newPostText:''
     },
     messagesPage:{
         dialogsDataBase :[
@@ -29,6 +30,7 @@ let state = {
 };
 
 export let addPost = (postMessage) =>{
+    if(postMessage!=''){
     let newPost={
         id:7,
         post: postMessage,
@@ -36,7 +38,12 @@ export let addPost = (postMessage) =>{
     }
     state.profilePage.postDataBase.unshift(newPost);
     rerenderDomTree(state);
+    }
 }
 
+export let NewTextPostChange = (textChange) => {
+  state.profilePage.newPostText = textChange;
+  rerenderDomTree(state);
+};
 
 export default state;
