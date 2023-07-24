@@ -8,13 +8,13 @@
     margin-top: 5px;
     margin-bottom: 0px;
     text-decoration: none;
-   
+ 
 }
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: 'Montserrat Alternates';
-
 }
+
 .dialogsItems{
     background: #EDEBE9;
     text-decoration: none;
@@ -42,25 +42,66 @@
     height: min-content;
 
     border-radius: 15%;
-
+   
     width: max-content;
+ 
     padding: 20px;
     background: #fcf5ee;
+    margin-bottom: 30px;
+    bottom:30px;
+
+    position: relative;
+    max-width: 75%;
+    padding: 7px 15px;
+    margin-bottom: 5px;
+
+
 }
+.messageItems{
+    margin: 10px;
+    overflow:auto;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+}
+.sendMessArea{
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 11fr 1fr;
+    position: fixed;
+    bottom: 10px;
+    z-index: 0;
+    grid-template-areas: 
+    "area" "button";
+    place-items: center;
+    gap: 10px;
+    margin-bottom: 0px;
+    padding: 10px;
+}
+
 .sendText{
-    width: 60%;
+    width: 100%;
     min-width: 10%;
     height: 60px;
     margin: 30px;
     border-radius: 10px;
+    justify-content: center;
+    display: grid;
+    grid-area: 'area';
+
 }
 .sendButton{
+    display: grid;
+    grid-area: 'button';
     background-color: #fcf5ee;
     color: #303030;
     text-transform: uppercase;
     width: max-content;
-    padding: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
     font-family: 'Montserrat Alternates';
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    border-radius: 10px;
+    
+    
 }

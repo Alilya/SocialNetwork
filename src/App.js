@@ -16,8 +16,11 @@ function App(props) {
         <Routes>
           <Route
             path="/profile"
-            element={<Profile post={props.state.profilePage.postDataBase} addPost={props.addPost} newPost={props.state.profilePage.newPostText}
-            NewTextPostChange={props.NewTextPostChange}/>}
+            element={<Profile post={props.state.profilePage.postDataBase} 
+            newPost={props.state.profilePage.newPostText}
+            dispatch={props.dispatch}
+            />}
+           
 
           />
           <Route
@@ -26,6 +29,9 @@ function App(props) {
               <MessagesAll
                 messages={props.state.messagesPage.messagesDataBase}
                 dialogs={props.state.messagesPage.dialogsDataBase}
+                newMess={props.state.messagesPage.newMessageText}
+                dispatch={props.dispatch}
+                
               />
             }
           />

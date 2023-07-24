@@ -14,7 +14,10 @@ const MessagesAll=(props) => {
     return (
       <div className={style.messages}>
         <div className={style.dialogsItems}>{dialogsElements}</div>
-        <div className={style.messageItems}>{messagesElements} <SendMessage/> </div>
+        <div className={style.messageItems}>
+          {messagesElements} 
+        <SendMessage dispatch={props.dispatch}/> 
+        </div>
        
       </div>
     );

@@ -3,20 +3,24 @@ import './InputPost.css'
 const InputPost=(props) => {
 
   let newPostElement=React.createRef();
+
   let addPost = () => {
-    let textPost = newPostElement.current.value;
-    props.addPost(textPost);
-    newPostElement.current.value="";
+    props.dispatch({type:'ADD-POST'});
   };
+
   let onPostChange =()=>{
-    let textPost = newPostElement.current.value;
-    props.NewTextPostChange(textPost);
-    
+    let action = { 
+      type:'UPDATE-NEW-TEXT-POST',
+      textChange: newPostElement.current.value,
+    };
+    props.dispatch(action);
   }
 
     return (
         <div className="InputPost backgroundColor borderRadius">
-          <textarea onChange={onPostChange} ref={newPostElement} type="text" placeholder="Поделитесь котиком" value={props.newPostText}
+          <textarea onChange={onPostChange} ref={newPostElement} 
+          type="text" placeholder="Поделитесь котиком" 
+          value={props.newPostText}
             className="textInputLabel textFamily borderRadius" />
 
           <button className="buttonCatPaw backgroundColorItem borderRadius" onClick={addPost}>
