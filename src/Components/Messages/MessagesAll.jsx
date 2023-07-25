@@ -16,7 +16,8 @@ const MessagesAll=(props) => {
         <div className={style.dialogsItems}>{dialogsElements}</div>
         <div className={style.messageItems}>
           {messagesElements} 
-        <SendMessage dispatch={props.dispatch}/> 
+        <SendMessage dispatch={props.dispatch}
+         newMessageText={props.newMess}/> 
         </div>
        
       </div>

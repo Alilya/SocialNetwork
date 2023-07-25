@@ -1,3 +1,6 @@
+import messageReducer from './messageReducer';
+import profileReducer from './profileReducer';
+import sideBarReducer from './sideBarReducer';
 
 let store = {
   _state: {
@@ -6,7 +9,6 @@ let store = {
         { id: 1, post: "Привет", countLike: "15" },
         { id: 2, post: "Я люблю котиков", countLike: "45" },
       ],
-      
       newPostText: "",
     },
     messagesPage: {
@@ -31,6 +33,7 @@ let store = {
       ],
       newMessageText: "",
     },
+    sideBar: {},
   },
   _rerenderDomTree() {
     console.log("fff");
@@ -43,57 +46,13 @@ let store = {
     return this._state;
   },
 
+  dispatch(action) {
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.messagesPage = messageReducer(this._state.messagesPage, action);
+    this._state.sideBar = sideBarReducer(this._state.sideBar, action);
 
-  _addPost(){
-  if (this._state.profilePage.newPostText !== "") {
-    let newPost = {
-      id: 7,
-      post: this._state.profilePage.newPostText,
-      countLike: "0",
-    };
-    this._state.profilePage.postDataBase.unshift(newPost);
-    this._rerenderDomTree(this._state);
-    this._state.profilePage.newPostText = "";
-  }
+    this._rerenderDomTree(this._state)
   },
-
-  _updateNewTextPost(textChange){
-    this._state.profilePage.newPostText = textChange;
-    this._rerenderDomTree(this._state);
-  }, 
-
-  _addMessage(){
-    let newMess = {
-      id: 8,
-      messText: this._state.messagesPage.newMessageText,
-    };
-    this._state.messagesPage.messagesDataBase.push(newMess);
-    this._rerenderDomTree(this._state);
-    this._state.messagesPage.newMessageText = "";
-  },
-
-_updateNewTextMessage(textChange){
-  this._state.messagesPage.newMessageText = textChange;
-  this._rerenderDomTree(this._state);
-},
-
-
-  dispatch(action){
-    if (action.type ==='ADD-POST'){
-      this._addPost();
-    }
-    else if(action.type ==='UPDATE-NEW-TEXT-POST'){
-      this._updateNewTextPost(action.textChange);
-    }
-    else if(action.type ==='ADD-MESSAGE'){
-      this._addMessage();
-    }
-    else if(action.type ==='UPDATE-NEW-TEXT-MESSAGE'){
-      this._updateNewTextMessage(action.textChange);
-    }
-  }
-  
 };
-
 
 export default store;

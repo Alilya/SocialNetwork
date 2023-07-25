@@ -1,19 +1,19 @@
 import React from 'react'
 import './InputPost.css'
+import { addPostActionCreator, updateTextPostActionCreator } from '../../../redux/profileReducer';
+
+
 const InputPost=(props) => {
 
   let newPostElement=React.createRef();
 
   let addPost = () => {
-    props.dispatch({type:'ADD-POST'});
+    props.dispatch(addPostActionCreator());
   };
 
   let onPostChange =()=>{
-    let action = { 
-      type:'UPDATE-NEW-TEXT-POST',
-      textChange: newPostElement.current.value,
-    };
-    props.dispatch(action);
+    let text = newPostElement.current.value;
+    props.dispatch(updateTextPostActionCreator(text));
   }
 
     return (
@@ -23,7 +23,8 @@ const InputPost=(props) => {
           value={props.newPostText}
             className="textInputLabel textFamily borderRadius" />
 
-          <button className="buttonCatPaw backgroundColorItem borderRadius" onClick={addPost}>
+          <button className="buttonCatPaw backgroundColorItem borderRadius" 
+          onClick={addPost}>
             <img
               src="https://pictures.pibig.info/uploads/posts/2023-04/1681417678_pictures-pibig-info-p-lapka-kota-risunok-vkontakte-4.png"
               className="catPaw"/>
