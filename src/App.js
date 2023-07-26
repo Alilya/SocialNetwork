@@ -16,12 +16,13 @@ function App(props) {
         <Routes>
           <Route
             path="/profile"
-            element={<Profile post={props.state.profilePage.postDataBase} 
-            newPost={props.state.profilePage.newPostText}
-            dispatch={props.dispatch}
-            />}
-           
-
+            element={
+              <Profile
+                post={props.state.profilePage.postDataBase}
+                newPost={props.state.profilePage.newPostText}
+                dispatch={props.dispatch}
+              />
+            }
           />
           <Route
             path="/messages/*"
@@ -31,7 +32,6 @@ function App(props) {
                 dialogs={props.state.messagesPage.dialogsDataBase}
                 newMess={props.state.messagesPage.newMessageText}
                 dispatch={props.dispatch}
-                
               />
             }
           />
