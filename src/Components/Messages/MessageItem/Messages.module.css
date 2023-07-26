@@ -8,6 +8,8 @@
     margin-top: 5px;
     margin-bottom: 0px;
     text-decoration: none;
+
+  
  
 }
 *, *::before, *::after {
@@ -55,7 +57,7 @@
     padding: 7px 15px;
     margin-bottom: 5px;
 
-
+  
 }
 .messageItems{
     margin: 10px;
@@ -77,9 +79,10 @@
     gap: 10px;
     margin-bottom: 0px;
     padding: 10px;
+
 }
 
-.sendText{
+ .sendText{    /* textarea */
     width: 100%;
     min-width: 10%;
     height: 60px;
@@ -88,6 +91,8 @@
     justify-content: center;
     display: grid;
     grid-area: 'area';
+
+    resize: none;
 
 }
 .sendButton{

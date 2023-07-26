@@ -5,8 +5,9 @@
    
     height: 64px;
     padding: 1rem 1rem;
-    width: 100%;
-   
+
+    resize: none;
+    
     color: #212529;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 

@@ -1,5 +1,6 @@
 const ADD_POST ='ADD-POST';
 const UPDATE_POST ='UPDATE-NEW-TEXT-POST';
+
 let initialState = {
   postDataBase: [
     { id: 1, post: "Привет", countLike: "15" },
