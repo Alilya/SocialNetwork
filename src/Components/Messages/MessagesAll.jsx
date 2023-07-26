@@ -5,6 +5,7 @@ import MessageItem from "./MessageItem/Messages";
 import SendMessage from "./SendMessage";
 
 const MessagesAll = (props) => {
+
   let messagesElements = props.messages.map((messages) => (
     <MessageItem message={messages.messText} />
   ));
@@ -13,12 +14,35 @@ const MessagesAll = (props) => {
     <DialogItem id={dialog.id} name={dialog.name} />
   ));
 
+  let onSendMessage=() =>{
+    props.sendMessage();
+  }
+
+  let onMessageChange=(e)=>{
+    let text = e.target.value;
+    props.onMessageChange(text);
+  }
+ 
+
   return (
     <div className={style.messages}>
-      <div className={style.dialogsItems}>{dialogsElements}</div>
+      <div className={style.dialogsItems}>
+        {dialogsElements}</div>
+
       <div className={style.messageItems}>
         {messagesElements}
-        <SendMessage dispatch={props.dispatch} newMessageText={props.newMess} />
+
+        <div className={style.sendMessArea}>
+          <textarea
+            onChange={onMessageChange} type="text" placeholder="Отправьте сообщение"
+            value={props.newMessageText} className={style.sendText}>
+          </textarea>
+          
+          <button onClick={onSendMessage} className={style.sendButton}>
+            Send
+          </button>
+        </div>
+
       </div>
     </div>
   );
