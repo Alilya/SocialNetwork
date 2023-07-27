@@ -1,18 +1,16 @@
-import './Profile.css'
-import ProfileAvaMainText from './MainTextProfile/ProfileAvaMainText';
-import InputPostContainer from './InputPost/InputPostContainer';
+import "./Profile.css";
+import ProfileAvaMainText from "./MainTextProfile/ProfileAvaMainText";
+import InputPostContainer from "./InputPost/InputPostContainer";
 
-const Profile=(props) => {
-    return (
-      <div>
-        <div className="profile content">
-          <ProfileAvaMainText className="ProfileAvaMainText" />
-          <InputPostContainer  
-          store={props.store}
-          />
-        </div>
-      </div> 
-    );
 
-}
+const Profile = (props) => {
+  return (
+    
+      <div className="profile content">
+        <ProfileAvaMainText className="ProfileAvaMainText" />
+        <InputPostContainer />
+      </div>
+
+  );
+};
 export default Profile;
