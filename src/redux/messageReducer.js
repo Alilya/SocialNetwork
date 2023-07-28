@@ -32,13 +32,18 @@ const messageReducer =(state=initialState, action)=>{
           id: 8,
           messText: state.newMessageText,
         };
-        state.messagesDataBase.push(newMess);
-        state.newMessageText = "";
-        return state;
+        let stateCopy = {...state};
+        stateCopy.messagesDataBase=[...state.messagesDataBase];
+
+        stateCopy.messagesDataBase.push(newMess);
+        stateCopy.newMessageText = "";
+        return stateCopy;
       }
+      break;
     case SEND_MESSAGE:
-      state.newMessageText = action.textChange;
-      return state;
+      let stateCopy = {...state};
+      stateCopy.newMessageText = action.textChange;
+      return stateCopy;
 
     default:
       return state;

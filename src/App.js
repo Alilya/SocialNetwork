@@ -19,7 +19,7 @@ function App() {
           <Profile/>} 
           />
           <Route path="/messages/*" element={
-          <MessagesContainer/>}
+          <MessagesContainer />}
           />
         </Routes>
       </div>

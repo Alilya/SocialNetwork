@@ -18,13 +18,19 @@ const profileReducer =(state=initialState, action)=>{
           post: state.newPostText,
           countLike: "0",
         };
-        state.postDataBase.unshift(newPost);
-        state.newPostText = "";
+
+        let stateCopy = {...state};
+        stateCopy.postDataBase=[...state.postDataBase];
+
+        stateCopy.postDataBase.unshift(newPost);
+        stateCopy.newPostText = "";
+        return stateCopy;
       }
-      return state;
+     break;
     case UPDATE_POST:
-      state.newPostText = action.textChange;
-      return state;
+      let stateCopy = {...state};
+      stateCopy.newPostText = action.textChange;
+      return stateCopy;
     default:
         return state;
   }

@@ -3,7 +3,7 @@ import './InputPost.css'
 import NewPostProfile from '../NewPostProfile/NewPostsProfile';
 
 const InputPost=(props) => {
-  let postsElements=props.post.map(post=>
+  let postsElements=props.profilePage.postDataBase.map(post=>
     <NewPostProfile textPost={post.post} countLike={post.countLike}/>
   )
 
@@ -26,7 +26,7 @@ const InputPost=(props) => {
             ref={newPostElement}
             type="text"
             placeholder="Поделитесь котиком"
-            value={props.newPostText}
+            value={props.profilePage.newPostText}
             className="textInputLabel textFamily borderRadius"
           />
 

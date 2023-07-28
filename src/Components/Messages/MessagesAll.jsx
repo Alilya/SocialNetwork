@@ -5,11 +5,11 @@ import MessageItem from "./MessageItem/Messages";
 
 const MessagesAll = (props) => {
 
-  let messagesElements = props.messages.map((messages) => (
+  let messagesElements = props.messagesPage.messagesDataBase.map((messages) => (
     <MessageItem message={messages.messText} />
   ));
 
-  let dialogsElements = props.dialogs.map((dialog) => (
+  let dialogsElements = props.messagesPage.dialogsDataBase.map((dialog) => (
     <DialogItem id={dialog.id} name={dialog.name} />
   ));
 
@@ -34,7 +34,7 @@ const MessagesAll = (props) => {
         <div className={style.sendMessArea}>
           <textarea
             onChange={onMessageChange} type="text" placeholder="Отправьте сообщение"
-            value={props.newMessageText} className={style.sendText}>
+            value={props.messagesPage.newMessageText} className={style.sendText}>
           </textarea>
           
           <button onClick={onSendMessage} className={style.sendButton}>
