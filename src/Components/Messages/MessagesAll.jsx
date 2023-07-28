@@ -6,11 +6,11 @@ import MessageItem from "./MessageItem/Messages";
 const MessagesAll = (props) => {
 
   let messagesElements = props.messagesPage.messagesDataBase.map((messages) => (
-    <MessageItem message={messages.messText} />
+    <MessageItem message={messages.messText} key={messages.id}/>
   ));
 
   let dialogsElements = props.messagesPage.dialogsDataBase.map((dialog) => (
-    <DialogItem id={dialog.id} name={dialog.name} />
+    <DialogItem id={dialog.id} name={dialog.name} key={dialog.id}/>
   ));
 
   let onSendMessage=() =>{

@@ -25,6 +25,7 @@ let initialState = {
 };
 
 const messageReducer =(state=initialState, action)=>{
+  let stateCopy = {...state};
   switch (action.type) {
     case ADD_MESSAGE:
       if (state.newMessageText !== "") {
@@ -32,17 +33,17 @@ const messageReducer =(state=initialState, action)=>{
           id: 8,
           messText: state.newMessageText,
         };
-        let stateCopy = {...state};
-        stateCopy.messagesDataBase=[...state.messagesDataBase];
-
-        stateCopy.messagesDataBase.push(newMess);
-        stateCopy.newMessageText = "";
+        stateCopy = {...state, 
+          messagesDataBase:[...state.messagesDataBase,newMess],
+          newMessageText : ""
+        };
         return stateCopy;
       }
       break;
     case SEND_MESSAGE:
-      let stateCopy = {...state};
-      stateCopy.newMessageText = action.textChange;
+      stateCopy = {
+        ...state,
+        newMessageText: action.textChange};
       return stateCopy;
 
     default:

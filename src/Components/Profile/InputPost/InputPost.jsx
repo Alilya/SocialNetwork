@@ -4,7 +4,7 @@ import NewPostProfile from '../NewPostProfile/NewPostsProfile';
 
 const InputPost=(props) => {
   let postsElements=props.profilePage.postDataBase.map(post=>
-    <NewPostProfile textPost={post.post} countLike={post.countLike}/>
+    <NewPostProfile key={post.id} textPost={post.post} countLike={post.countLike}/>
   )
 
   let newPostElement = React.createRef();
@@ -36,7 +36,7 @@ const InputPost=(props) => {
           >
             <img
               src="https://pictures.pibig.info/uploads/posts/2023-04/1681417678_pictures-pibig-info-p-lapka-kota-risunok-vkontakte-4.png"
-              className="catPaw"
+              className="catPaw" alt='Cat'
             />
           </button>
         </div>
