@@ -1,5 +1,5 @@
-const ADD_POST ='ADD-POST';
-const UPDATE_POST ='UPDATE-NEW-TEXT-POST';
+const ADD_POST = "ADD-POST";
+const UPDATE_POST = "UPDATE-NEW-TEXT-POST";
 
 let initialState = {
   postDataBase: [
@@ -9,7 +9,7 @@ let initialState = {
   newPostText: "",
 };
 
-const profileReducer =(state=initialState, action)=>{
+const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
       if (state.newPostText !== "") {
@@ -20,31 +20,28 @@ const profileReducer =(state=initialState, action)=>{
         };
 
         let stateCopy = {
-           ...state,
-           postDataBase: [newPost, ...state.postDataBase],
-           newPostText: ""};
+          ...state,
+          postDataBase: [newPost, ...state.postDataBase],
+          newPostText: "",
+        };
         return stateCopy;
       }
-     break;
+      break;
     case UPDATE_POST:
-      let stateCopy = {...state,
-       newPostText : action.textChange,
-      };
-      return stateCopy;
+      return { ...state, newPostText: action.textChange };
+
     default:
-        return state;
+      return state;
   }
-}
+};
 
+export const addPostActionCreator = () => ({
+  type: ADD_POST,
+});
 
-export const addPostActionCreator = ()=> ({
-    type:ADD_POST
-  })
-  
-  export const updateTextPostActionCreator = (text)=>({
-      type: UPDATE_POST,
-      textChange: text,
-    })
+export const updateTextPostActionCreator = (text) => ({
+  type: UPDATE_POST,
+  textChange: text,
+});
 
-    
 export default profileReducer;

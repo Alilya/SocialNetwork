@@ -1,5 +1,5 @@
-const ADD_MESSAGE ='ADD-MESSAGE';
-const SEND_MESSAGE ='UPDATE-NEW-TEXT-MESSAGE';
+const ADD_MESSAGE = "ADD-MESSAGE";
+const SEND_MESSAGE = "UPDATE-NEW-TEXT-MESSAGE";
 
 let initialState = {
   dialogsDataBase: [
@@ -24,37 +24,35 @@ let initialState = {
   newMessageText: "",
 };
 
-const messageReducer =(state=initialState, action)=>{
-  let stateCopy = {...state};
+const messageReducer = (state = initialState, action) => {
+
   switch (action.type) {
     case ADD_MESSAGE:
       if (state.newMessageText !== "") {
-        let newMess = {
-          id: 8,
-          messText: state.newMessageText,
-        };
-        stateCopy = {...state, 
-          messagesDataBase:[...state.messagesDataBase,newMess],
-          newMessageText : ""
+        let stateCopy = {
+          ...state,
+          messagesDataBase: [
+            ...state.messagesDataBase,
+            { id: 8, messText: state.newMessageText },
+          ],
+          newMessageText: "",
         };
         return stateCopy;
       }
       break;
     case SEND_MESSAGE:
-      stateCopy = {
+      return {
         ...state,
-        newMessageText: action.textChange};
-      return stateCopy;
-
+        newMessageText: action.textChange,
+      };
     default:
       return state;
   }
-}
+};
 
-
-export const addMessageActionCreator = ()=>({
-  type:ADD_MESSAGE
-})
+export const addMessageActionCreator = () => ({
+  type: ADD_MESSAGE,
+});
 
 export const updateTextMessageActionCreator = (text) => ({
   type: SEND_MESSAGE,
