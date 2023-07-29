@@ -1,0 +1,59 @@
+.userBlock{
+    display: grid;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding-top: 1rem;
+    padding-left: 2rem;
+
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+    "ava"  "text" 
+    "button"  "text";
+    grid-gap: 35px;
+    margin: 10px;
+
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates';
+}
+.buttonFollow{
+    display: grid;
+    grid-area: 'button';
+    padding: 10px;
+    margin: 10px;
+    margin-left: 5px;
+    width: 90%;
+    height: 30%;
+    align-content: center;
+    justify-items: center;
+    background-color: #fcf5ee;
+    border-radius: 10px;
+}
+.img{
+    display: grid;
+    grid-area: 'ava';
+    width: 100%;
+    border-radius: 50%;
+}
+.text{
+    display: grid;
+    height: 40%;
+    grid-area: 'text';
+    justify-content: end;
+    font-size: 20px;
+    padding-right: 9%;
+    margin: 5px;
+    color: rgb(93, 93, 93);
+}
+.text p {
+ margin: 0;
+}
+.name{
+    font-size: 30px;
+    display: flex;
+    justify-content: end;
+    padding-right: 15%;
+    padding: 10%;
+}

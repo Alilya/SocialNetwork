@@ -4,6 +4,7 @@ import Header from './Components/Header/Header';
 import Menu from './Components/NavbarMenu/Menu';
 import Profile from './Components/Profile/Profile';
 import MessagesContainer from './Components/Messages/MessagesContainer';
+import UsersContainer from './Components/Users/UsersContainer';
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
@@ -21,6 +22,9 @@ function App() {
           <Route path="/messages/*" element={
           <MessagesContainer />}
           />
+           <Route path="/users" element={
+           <UsersContainer/> }
+           />
         </Routes>
       </div>
     </div>
