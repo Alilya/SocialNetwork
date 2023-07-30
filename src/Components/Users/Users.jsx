@@ -4,17 +4,20 @@ import axios from "axios";
 import cat from '../../assets/images/cat.webp'
 
 let Users = (props) =>{
-  // if(props.users.lenght===0){
 
-  axios
-    .get("https://social-network.samuraijs.com/api/1.0/users")
-    .then((res) => {
-      props.setUsers(res.data.items);
-    });
-
-  //}
+  let getUsers=()=>{
+    // if (props.users.lenght === 0) {
+      axios
+        .get("https://social-network.samuraijs.com/api/1.0/users")
+        .then((res) => {
+          props.setUsers(res.data.items);
+        });
+    //}
+ }
+   
   return (
     <div>
+      <button onClick={getUsers}>Get users</button> 
       {props.users.map((u) => (
         <div key={u.id}>
           <div className={style.userBlock}>
