@@ -46,6 +46,7 @@
     padding-right: 9%;
     margin: 5px;
     color: rgb(93, 93, 93);
+    padding-right: 20%;
 }
 .text p {
  margin: 0;
@@ -56,4 +57,5 @@
     justify-content: end;
     padding-right: 15%;
     padding: 10%;
+    padding-right: 20%;
 }

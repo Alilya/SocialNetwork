@@ -4,38 +4,38 @@ const SET_USERS = 'SET-USERS'
 
 let initialState = {
   users: [
-    {
-      id: "1",
-      name: "Alina",
-      location: { city: 'Moscow', country: 'Russia' },
-      followed: true,
-      status: "Hello world",
-      avatarUrl:"https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg",
-    },
-    {
-      id: "2",
-      name: "Vika",
-      location: { city: 'Tambov', country: 'Russia' },
-      followed: false,
-      status: "hi world",
-      avatarUrl:"https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg",
-    },
-    {
-        id: "3",
-        name: "Max",
-        location: { city: 'Moscow', country: 'Russia' },
-        followed: true,
-        status: "Hello world",
-        avatarUrl:"https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg",
-      },
-      {
-        id: "4",
-        name: "Sveta",
-        location: { city: 'Tambov', country: 'Russia' },
-        followed: false,
-        status: "hi world",
-        avatarUrl:"https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg",
-      },
+    // {
+    //   id: "1",
+    //   name: "Alina",
+    //   location: { city: 'Moscow', country: 'Russia' },
+    //   followed: true,
+    //   status: "Hello world",
+    //   avatarUrl:"https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg",
+    // },
+    // {
+    //   id: "2",
+    //   name: "Vika",
+    //   location: { city: 'Tambov', country: 'Russia' },
+    //   followed: false,
+    //   status: "hi world",
+    //   avatarUrl:"https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg",
+    // },
+    // {
+    //     id: "3",
+    //     name: "Max",
+    //     location: { city: 'Moscow', country: 'Russia' },
+    //     followed: true,
+    //     status: "Hello world",
+    //     avatarUrl:"https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg",
+    //   },
+    //   {
+    //     id: "4",
+    //     name: "Sveta",
+    //     location: { city: 'Tambov', country: 'Russia' },
+    //     followed: false,
+    //     status: "hi world",
+    //     avatarUrl:"https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg",
+    //   },
   ],
 };
 
