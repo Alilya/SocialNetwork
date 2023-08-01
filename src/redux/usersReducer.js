@@ -1,42 +1,14 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW ='UNFOLLOW';
-const SET_USERS = 'SET-USERS'
+const SET_USERS = 'SET-USERS';
+const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE'
+const SET_TOTAL_COUNT = 'SET-TOTAL-COUNT'
 
 let initialState = {
-  users: [
-    // {
-    //   id: "1",
-    //   name: "Alina",
-    //   location: { city: 'Moscow', country: 'Russia' },
-    //   followed: true,
-    //   status: "Hello world",
-    //   photos:"https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg",
-    // },
-    // {
-    //   id: "2",
-    //   name: "Vika",
-    //   location: { city: 'Tambov', country: 'Russia' },
-    //   followed: false,
-    //   status: "hi world",
-    //   photos:"https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg",
-    // },
-    // {
-    //     id: "3",
-    //     name: "Max",
-    //     location: { city: 'Moscow', country: 'Russia' },
-    //     followed: true,
-    //     status: "Hello world",
-    //     avatarUrl:"https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg",
-    //   },
-    //   {
-    //     id: "4",
-    //     name: "Sveta",
-    //     location: { city: 'Tambov', country: 'Russia' },
-    //     followed: false,
-    //     status: "hi world",
-    //     avatarUrl:"https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg",
-    //   },
-  ],
+  users: [],
+  pageSize: 5,
+  totalUsersCount: 0,
+  currentPage:1,
 };
 
 const usersReducer =(state=initialState, action)=>{
@@ -62,27 +34,34 @@ const usersReducer =(state=initialState, action)=>{
             return u;
           }),
         };
+
       case SET_USERS:
-        return { ...state, users: [...state.users, ...action.users] };
-        
+        return { ...state, users: [...action.users, ...state.users] };
+
+      case SET_CURRENT_PAGE:
+        return { ...state, currentPage: action.currentPage };
+
+      case SET_TOTAL_COUNT:
+        return { ...state, totalUsersCount: action.totalUsersCount };
+
       default:
         return state;
     }
 }
 
-export const followAC = (userId) => ({
-    type: FOLLOW,
-    userId,
-  });
-  
-  export const unfollowAC = (userId) => ({
-    type: UNFOLLOW,
-    userId,
-  });
+export const followAC = (userId) => ({ type: FOLLOW, userId });
 
-  export const setUsersAC = (users) => ({
-    type: SET_USERS,
-    users,
-  });
-  
+export const unfollowAC = (userId) => ({ type: UNFOLLOW, userId });
+
+export const setUsersAC = (users) => ({ type: SET_USERS, users });
+
+export const setCurrentPageAC = (currentPage) => ({
+  type: SET_CURRENT_PAGE,
+  currentPage,
+});
+export const setTotalCountAC = (totalUsersCount) => ({
+  type: SET_TOTAL_COUNT,
+  totalUsersCount,
+});
+
 export default usersReducer;

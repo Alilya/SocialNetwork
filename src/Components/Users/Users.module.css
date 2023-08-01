@@ -59,3 +59,13 @@
     padding: 10%;
     padding-right: 20%;
 }
+.selectedPage{
+    color: rgb(0, 0, 0);
+    font-weight:700;
+}
+.page{
+    font-weight:300;
+    color: rgb(86, 86, 86);
+    margin: 5px;
+    cursor: pointer;
+}
