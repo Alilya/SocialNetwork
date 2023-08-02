@@ -1,5 +1,6 @@
 import Preloader from '../../common/preloader/preloader';
 import './ProfileAvaMainText.css'
+import catPhoto from '../../../assets/images/cat.webp'
 
 const ProfileAvaMainText=(props) => {
   if(!props.profile){
@@ -9,7 +10,7 @@ const ProfileAvaMainText=(props) => {
     return (
       <div className="ProfileAvaMainText backgroundColor borderRadius">
           <div className="profileAva">
-            <img src={props.profile.photos.small} />
+            <img src={!props.profile.photos.small ?  catPhoto : props.profile.photos.small} />
           </div>
           
           <div className="profileAbout textFamily">
