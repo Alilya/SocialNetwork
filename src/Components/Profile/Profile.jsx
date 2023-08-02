@@ -7,7 +7,7 @@ const Profile = (props) => {
   return (
     
       <div className="profile content">
-        <ProfileAvaMainText className="ProfileAvaMainText" />
+        <ProfileAvaMainText className="ProfileAvaMainText" profile={props.profile}/>
         <InputPostContainer />
       </div>
 

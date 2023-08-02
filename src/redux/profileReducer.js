@@ -1,5 +1,6 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_POST = "UPDATE-NEW-TEXT-POST";
+const SET_PROFILE = 'SET-PROFILE'
 
 let initialState = {
   postDataBase: [
@@ -7,10 +8,12 @@ let initialState = {
     { id: 2, post: "Я люблю котиков", countLike: "45" },
   ],
   newPostText: "",
+  profile: null,
 };
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
+    
     case ADD_POST:
       if (state.newPostText !== "") {
         let newPost = {
@@ -27,21 +30,30 @@ const profileReducer = (state = initialState, action) => {
         return stateCopy;
       }
       break;
+
     case UPDATE_POST:
       return { ...state, newPostText: action.textChange };
+
+    case SET_PROFILE:
+      return { ...state, profile: action.profile };
 
     default:
       return state;
   }
 };
 
-export const addPostActionCreator = () => ({
+export const addPost = () => ({
   type: ADD_POST,
 });
 
-export const updateTextPostActionCreator = (text) => ({
+export const updateTextPost = (text) => ({
   type: UPDATE_POST,
   textChange: text,
+});
+
+export const setUsersProfile = (profile) => ({
+  type: SET_PROFILE,
+  profile,
 });
 
 export default profileReducer;

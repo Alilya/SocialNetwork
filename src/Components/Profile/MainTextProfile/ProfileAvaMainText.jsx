@@ -1,22 +1,29 @@
+import Preloader from '../../common/preloader/preloader';
 import './ProfileAvaMainText.css'
-const ProfileAvaMainText=() => {
+
+const ProfileAvaMainText=(props) => {
+  if(!props.profile){
+    <Preloader/>
+  }
+  else{
     return (
       <div className="ProfileAvaMainText backgroundColor borderRadius">
           <div className="profileAva">
-            <img src="https://flomaster.club/uploads/posts/2023-01/1674276511_flomaster-club-p-kot-v-ochkakh-risunok-vkontakte-1.jpg" />
+            <img src={props.profile.photos.small} />
           </div>
           
           <div className="profileAbout textFamily">
             <ul>
-              <li>Котик Вася</li>
-              <li>3 года</li>
-              <li> Живу за счет женщины</li>
+              <li>{props.profile.name}</li>
+              <li>{props.profile.fullName}</li>
+              <li>{props.profile.aboutMe}</li>
+              
             </ul>
           </div>
       
       
       </div>
     );
-
+    }
 }
 export default ProfileAvaMainText;

@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Users.module.css";
 import cat from "../../assets/images/cat.webp";
+import { NavLink } from "react-router-dom";
 
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize/1000);
@@ -10,7 +11,7 @@ let Users = (props) => {
   }
  
   return (
-    
+
     <div>
       <div className={style.page}>
   
@@ -32,13 +33,13 @@ let Users = (props) => {
       {props.users.map((u) => (
         <div key={u.id}>
           <div className={style.userBlock}>
-          
+          <NavLink to={'/profile/'+u.id}>
             <img
               src={u.photos.small != null ? u.photos.small : cat }
               alt="catAva"
               className={style.img}
             />
-
+            </NavLink>
             <article className={style.name}>{u.name}</article>
             {u.followed ? (
               <button
