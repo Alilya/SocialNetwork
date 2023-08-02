@@ -7,10 +7,10 @@ let Users = (props) => {
   let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
-
   }
-  console.log(pages + ' pages');
+ 
   return (
+    
     <div>
       <div className={style.page}>
   

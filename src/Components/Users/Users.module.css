@@ -62,10 +62,16 @@
 .selectedPage{
     color: rgb(0, 0, 0);
     font-weight:700;
+    font-size: large;
 }
 .page{
     font-weight:300;
     color: rgb(86, 86, 86);
-    margin: 5px;
     cursor: pointer;
+    width: 30%;
+    margin-left: 40%;
+}
+.page span{
+    margin-left: 5px;
+    margin-right: 5px;
 }
