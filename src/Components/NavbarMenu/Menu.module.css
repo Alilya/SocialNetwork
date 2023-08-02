@@ -1,4 +1,5 @@
 .Menu {
+    display: grid;
     grid-area: Menu;
     top: 80px;
    

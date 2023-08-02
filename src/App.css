@@ -26,6 +26,6 @@
     border-radius: 35px;
 }
 .content{
-    display: grid;
     grid-area: Content;
+
 }
