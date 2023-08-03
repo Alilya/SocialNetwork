@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from './Components/Header/Header';
 import Menu from './Components/NavbarMenu/Menu';
 import MessagesContainer from './Components/Messages/MessagesContainer';
 import UsersContainer from './Components/Users/UsersContainer';
 import ProfileContainer from './Components/Profile/ProfileContainer';
+import HeaderContainer from './Components/Header/HeaderContainer';
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="mainSocialNetwork">
-      <Header />
+      <HeaderContainer />
       <Menu />
       <div className="content">
         <Routes>
