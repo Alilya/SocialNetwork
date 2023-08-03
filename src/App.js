@@ -16,7 +16,7 @@ function App() {
       <Menu />
       <div className="content">
         <Routes>
-          <Route path="/profile/*" element={
+          <Route path="/profile/:userId?" element={
           <ProfileContainer/>} 
           />
           <Route path="/messages/*" element={
