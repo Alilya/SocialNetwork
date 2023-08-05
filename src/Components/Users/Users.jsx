@@ -4,6 +4,7 @@ import cat from "../../assets/images/cat.webp";
 import { NavLink } from "react-router-dom";
 import { followAPI } from "../../API/API";
 
+
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize/1000);
   let pages = [];
@@ -40,27 +41,35 @@ let Users = (props) => {
             </NavLink>
             <article className={style.name}>{u.name}</article>
             {u.followed ? (
-              <button
+              <button disabled={props.followingInProgress.some(id=>id===u.id)}
                 onClick={() => {
+                  props.toggleFollowingProgress(true, u.id);
                 followAPI.deleteFollow(u.id).then((data) => {
                       if (data.resultCode === 0) {
                         props.unfollow(u.id);
                       }
+                      props.toggleFollowingProgress(false, u.id);
                     });
+                   
+                   
                 }}
                 className={style.buttonFollow}
               >
                 {" "}
                 Unfollow
               </button>) : (
-              <button
+              <button disabled={props.followingInProgress.some(id=>id===u.id)}
                 onClick={() => {
-          
+              
+
+                  props.toggleFollowingProgress(true, u.id);
                   followAPI.postFollow(u.id).then((data) => {
                       if (data.resultCode === 0) {
                         props.follow(u.id);
                       }
+                      props.toggleFollowingProgress(false, u.id);
                     });
+                   
                 }}
                 className={style.buttonFollow}
               >
