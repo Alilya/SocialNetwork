@@ -2,8 +2,7 @@ import React from "react";
 import style from "./Users.module.css";
 import cat from "../../assets/images/cat.webp";
 import { NavLink } from "react-router-dom";
-import { followAPI } from "../../API/API";
-
+import { userAPI } from "../../API/API";
 
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize/1000);
@@ -42,35 +41,14 @@ let Users = (props) => {
             <article className={style.name}>{u.name}</article>
             {u.followed ? (
               <button disabled={props.followingInProgress.some(id=>id===u.id)}
-                onClick={() => {
-                  props.toggleFollowingProgress(true, u.id);
-                followAPI.deleteFollow(u.id).then((data) => {
-                      if (data.resultCode === 0) {
-                        props.unfollow(u.id);
-                      }
-                      props.toggleFollowingProgress(false, u.id);
-                    });
-                   
-                   
-                }}
+                onClick={() => {props.unfollow(u.id)}}
                 className={style.buttonFollow}
               >
                 {" "}
                 Unfollow
               </button>) : (
               <button disabled={props.followingInProgress.some(id=>id===u.id)}
-                onClick={() => {
-              
-
-                  props.toggleFollowingProgress(true, u.id);
-                  followAPI.postFollow(u.id).then((data) => {
-                      if (data.resultCode === 0) {
-                        props.follow(u.id);
-                      }
-                      props.toggleFollowingProgress(false, u.id);
-                    });
-                   
-                }}
+                onClick={() =>{props.follow(u.id)}}
                 className={style.buttonFollow}
               >
                 Follow

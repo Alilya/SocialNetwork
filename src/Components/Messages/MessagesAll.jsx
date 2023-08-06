@@ -3,6 +3,7 @@ import style from "./MessageItem/Messages.module.css";
 import DialogItem from "./DialogItem/Dialogs";
 import MessageItem from "./MessageItem/Messages";
 
+
 const MessagesAll = (props) => {
 
   let messagesElements = props.messagesPage.messagesDataBase.map((messages) => (
@@ -40,6 +41,7 @@ const MessagesAll = (props) => {
           <button onClick={onSendMessage} className={style.sendButton}>
             Send
           </button>
+     
         </div>
 
       </div>
