@@ -58,13 +58,12 @@ export const setUsersProfile = (profile) => ({
   profile,
 });
 
-export const getProfile =(userId)=>{
-  return (dispatch)=>{
-    userAPI.getUsersProfile(userId)
-    .then((data) => {
-      dispatch(setUsersProfile(data));
+export const getUserProfile =(userId)=> (dispatch)=>{
+    userAPI.getProfile(userId)
+    .then((res) => {
+      dispatch(setUsersProfile(res.data));
     });
-  }
 }
+
 
 export default profileReducer;

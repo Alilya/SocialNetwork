@@ -6,9 +6,8 @@ const Header=(props) => {
       <div className="header borderRadius textFamily">
         <article>Котики делают нас лучше</article>
         <div className='auth'>
-          {props.isAuth ? <NavLink to={'/auth'}>  Sign Up
-          </NavLink>: console.log(props.login) 
-          }
+          {props.isAuth ? <span className='auth'>{props.login}</span> : <NavLink to={'/auth'}>  Sign Up
+          </NavLink>}
      
 
         </div>
