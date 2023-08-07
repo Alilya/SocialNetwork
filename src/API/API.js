@@ -1,8 +1,10 @@
 import axios from "axios";
 
+const APIKEY = "e168b1d0-e82f-4c07-9b95-22c6a39f44fd"; // better to encrypt API keys 
+
 const instance = axios.create({
   withCredentials: true,
-  headers: { "API-KEY": "e168b1d0-e82f-4c07-9b95-22c6a39f44fd" },
+  headers: { "API-KEY": APIKEY }, // its not allowed to store API keys raw, recomended to hash and save it to password manager or database
   baseURL: 'https://social-network.samuraijs.com/api/1.0/'
   
 });
