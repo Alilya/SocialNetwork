@@ -5,6 +5,7 @@ import MessagesContainer from './Components/Messages/MessagesContainer';
 import UsersContainer from './Components/Users/UsersContainer';
 import ProfileContainer from './Components/Profile/ProfileContainer';
 import HeaderContainer from './Components/Header/HeaderContainer';
+import Login from './Components/Login/Login';
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
@@ -24,6 +25,9 @@ function App() {
           />
            <Route path="/users" element={
            <UsersContainer/> }
+           />
+            <Route path="/login" element={
+           <Login/> }
            />
            
         </Routes>

@@ -4,9 +4,7 @@ import {
 } from "../../redux/usersReducer";
 import React from "react";
 import Users from "./Users";
-
 import Preloader from "../common/preloader/preloader";
-
 
 class UsersContainer extends React.Component {
   componentDidMount() {
@@ -18,6 +16,7 @@ class UsersContainer extends React.Component {
   };
 
   render() {
+   
     return (
       <>
         {this.props.isFetching ? <Preloader /> : null}
@@ -29,7 +28,7 @@ class UsersContainer extends React.Component {
           follow={this.props.follow}
           unfollow={this.props.unfollow}
           users={this.props.users}
-          
+          isAuth={this.props.isAuth}
           followingInProgress={this.props.followingInProgress}
         />
       </>
@@ -38,6 +37,7 @@ class UsersContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => {
+
   return {
     users: state.usersPage.users,
     pageSize: state.usersPage.pageSize,
@@ -45,6 +45,7 @@ let mapStateToProps = (state) => {
     currentPage: state.usersPage.currentPage,
     isFetching: state.usersPage.isFetching,
     followingInProgress: state.usersPage.followingInProgress,
+    isAuth: state.auth.isAuth,//
   };
 };
 
