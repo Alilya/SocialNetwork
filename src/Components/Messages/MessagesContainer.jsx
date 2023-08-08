@@ -4,8 +4,8 @@ import {
   updateTextMessageActionCreator,
 } from "../../redux/messageReducer";
 import { connect } from "react-redux";
-import { Navigate } from "react-router-dom";
 import WithAuthRedirect from "../../Hoc/WithAuthRedirect";
+import { compose } from "redux";
 
 
 let mapDispatchToProps = (dispatch) => ({
@@ -13,14 +13,12 @@ let mapDispatchToProps = (dispatch) => ({
     sendMessage:()=>{dispatch(addMessageActionCreator());},
 });
 
-
-
-
 let mapStateToProps = (state) => ({
   messagesPage: state.messagesPage,
 });
-debugger;
-let AuthRedirectComponent = WithAuthRedirect(MessagesAll);
 
-const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent);
-export default MessagesContainer;
+export default 
+compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  WithAuthRedirect
+)(MessagesAll);
