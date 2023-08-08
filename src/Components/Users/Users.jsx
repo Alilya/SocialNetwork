@@ -65,8 +65,8 @@ let Users = (props) => {
             )}
 
             <section className={style.text}>
-              <p>{u.aboutMe}</p>
-              <p>{"u.location.city"}</p>
+              <p>{u.status + '- status'}</p>
+              <p>{" - city"}</p>
             </section>
           </div>
         </div>

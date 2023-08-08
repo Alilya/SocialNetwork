@@ -24,7 +24,7 @@ const ProfileAvaMainText=(props) => {
             <span> {props.profile.fullName}</span>
           </div>
           <div className="profileAbout textFamily">
-            <ProfileStatus profile={props.profile} />
+            <ProfileStatus status={props.status} updateUserStatus ={props.updateUserStatus} />
           </div>
         </div>
       </div>

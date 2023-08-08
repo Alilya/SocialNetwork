@@ -4,33 +4,48 @@ import "./ProfileAvaMainText.css";
 class ProfileStatus extends React.Component {
   state = {
     editMode: false,
+    status : this.props.status
   };
 
-  activeEditMode() {
+  activeEditMode=()=> {
     this.setState({//выполняется асинхронно
       editMode: true,
     });
     //this.forceUpdate(); костыль
   }
-  deActiveEditMode() {
+  deActiveEditMode=()=> {
     this.setState({
       editMode: false,
+      status : this.props.status
     });
-  }
 
+    this.props.updateUserStatus(this.state.status);
+  }
+  onStatusChange = (e)=>{
+    this.setState({
+      status: e.currentTarget.value,
+    })
+    
+
+  }
   render() {
     return (
       <div>
         {!this.state.editMode && (
           <div>
-            <span onDoubleClick={this.activeEditMode.bind(this)}>
-              {this.props.profile.aboutMe}{" "}
+            <span onDoubleClick={this.activeEditMode}>
+              {this.props.status || "Статуса пока нет("}
             </span>
           </div>
         )}
         {this.state.editMode && (
           <div className="profileAbout">
-            <input autoFocus={true} onBlur={this.deActiveEditMode.bind(this)} value={this.props.profile.aboutMe} />
+            <input
+              onChange={this.onStatusChange}
+              autoFocus={true}
+              onBlur={this.deActiveEditMode}
+              value={this.state.status}
+            />
           </div>
         )}
       </div>

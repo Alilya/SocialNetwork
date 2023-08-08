@@ -5,12 +5,15 @@ import InputPostContainer from "./InputPost/InputPostContainer";
 const Profile = (props) => {
 
   return (
-    
-      <div className="profile content">
-        <ProfileAvaMainText className="ProfileAvaMainText" profile={props.profile}/>
-        <InputPostContainer />
-      </div>
-
+    <div className="profile content">
+      <ProfileAvaMainText
+        className="ProfileAvaMainText"
+        profile={props.profile}
+        status={props.status}
+        updateUserStatus={props.updateUserStatus}
+      />
+      <InputPostContainer />
+    </div>
   );
 };
 export default Profile;
