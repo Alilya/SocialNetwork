@@ -14,6 +14,11 @@
     line-height: 20px;
     text-transform: uppercase;
 }
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates';
+}
+
 .profileAva{
     grid-area: Img;
     width: 200px;
@@ -28,18 +33,19 @@
     border-radius: 100%;
 }
 
-.profileAbout ul :first-child{
+.profileAbout span :first-child{
     font-size: 24px;
     margin-bottom: 10px;
     color: #291B1B;
 }
 
-.profileAbout ul :last-child{
+.profileAbout span :last-child{
     margin-top: 30%;
     
 }
 
 .profileAbout{
+    display: grid;
     grid-area: Text;
 
     display: inline-flex;
@@ -47,6 +53,19 @@
 
     padding-left: 5%;
 }
-.profileAbout li{
+.profileAbout span{
     list-style-type: none;
 } 
+.profileAbout input {
+    background-color: #edebe9;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #494848;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.profileName{
+    font-size: 25px;
+    margin-bottom: 40px;
+}
