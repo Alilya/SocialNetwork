@@ -1,7 +1,4 @@
-import {
-  addPost,
-  updateTextPost,
-} from "../../../redux/profileReducer";
+import {addPost} from "../../../redux/profileReducer";
 import InputPost from "./InputPost";
 import { connect } from "react-redux";
 
@@ -10,11 +7,10 @@ let mapStateToProps=(state)=>{
     profilePage:state.profilePage
   }
 }
-let mapDispatchToProps2=(dispatch)=>{
+let mapDispatchToProps=(dispatch)=>{
   return{
-    addPost:()=>{ dispatch(addPost());},
-    updateTextPost:(text)=>{ dispatch(updateTextPost(text));},
+    addPost:(newPostBody)=>{ dispatch(addPost(newPostBody));},
   }
 }
-const InputPostContainer = connect(mapStateToProps,mapDispatchToProps2)(InputPost);
+const InputPostContainer = connect(mapStateToProps,mapDispatchToProps)(InputPost);
 export default InputPostContainer;
