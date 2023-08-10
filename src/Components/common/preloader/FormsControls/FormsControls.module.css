@@ -1,0 +1,24 @@
+.formControl{
+    width: 70%;
+    margin-right: 20px;
+    padding-right: 0;
+}
+
+.formControl.error input{
+    color: red;
+ 
+}
+.error{
+    margin-bottom: 1%;
+}
+.formControl.error textarea{
+    border: solid 2px red;
+}
+
+.formControl.error span{
+   color: red;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 2%;
+}

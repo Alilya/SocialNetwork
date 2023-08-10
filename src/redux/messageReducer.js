@@ -26,18 +26,14 @@ const messageReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case ADD_MESSAGE:
-      if (action.newMessageBody !== "") {
         let stateCopy = {
           ...state,
           messagesDataBase: [
             ...state.messagesDataBase,
-            { id: 8, 
-              messText: action.newMessageBody },
+            { id: 8, messText: action.newMessageBody },
           ],
         };
         return stateCopy;
-      }
-      break;
     default:
       return state;
   }

@@ -12,5 +12,6 @@ let mapDispatchToProps=(dispatch)=>{
     addPost:(newPostBody)=>{ dispatch(addPost(newPostBody));},
   }
 }
-const InputPostContainer = connect(mapStateToProps,mapDispatchToProps)(InputPost);
+const InputPostContainer = connect(mapStateToProps,
+  mapDispatchToProps)(InputPost);
 export default InputPostContainer;

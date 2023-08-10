@@ -42,31 +42,28 @@ let Users = (props) => {
             </NavLink>
             <article className={style.name}>{u.name}</article>
             {u.followed ? (
-              <button disabled={props.followingInProgress.some(id=>id===u.id)}
-            
+              <button 
+              disabled={props.followingInProgress.some(id=>id===u.id)}
                 onClick={() => {
                   if(!props.isAuth) return <Navigate to='/login'/>
                   else {props.unfollow(u.id)}
                 }}
-                className={style.buttonFollow}
-              >
-                {" "}
-                Unfollow
+                className={style.buttonFollow}>
+                  Unfollow
               </button>) : (
-              <button disabled={props.followingInProgress.some(id=>id===u.id)}
+              <button
+              disabled={props.followingInProgress.some(id=>id===u.id)}
                 onClick={() =>{
                   if(!props.isAuth) return <Navigate to='/login'/>
                   else {props.follow(u.id)}
                 }}
-                className={style.buttonFollow}
-              >
-                Follow
+                className={style.buttonFollow}>
+                  Follow
               </button>
             )}
 
             <section className={style.text}>
-              <p>{u.status + '- status'}</p>
-              <p>{" - city"}</p>
+              <p>{u.status || 'статуса пока нет('}</p>
             </section>
           </div>
         </div>

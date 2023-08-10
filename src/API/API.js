@@ -45,10 +45,5 @@ export const authAPI={
       },
 }
 
-export const loginAPI={
-  getLogin(){
-    return instance.get('')
-  }
-}
     
  

@@ -2,6 +2,8 @@ import React from 'react'
 import './InputPost.css'
 import NewPostProfile from '../NewPostProfile/NewPostsProfile';
 import { Field, reduxForm } from "redux-form";
+import { maxLengthCreator, required } from '../../../Utils/Validators';
+import { Textarea } from '../../common/preloader/FormsControls/FormsControls';
 
 const InputPost=(props) => {
   let postsElements=props.profilePage.postDataBase.map(post=>
@@ -19,7 +21,7 @@ const InputPost=(props) => {
     );
 
 }
-
+const maxLength10 = maxLengthCreator(10);
 
 const AddPostForm =(props)=>{
   return (
@@ -27,7 +29,7 @@ const AddPostForm =(props)=>{
       className="InputPost backgroundColor borderRadius"
       onSubmit={props.handleSubmit}
     >
-      <Field component="textarea"
+      <Field component={Textarea} validate={[required, maxLength10]}
         name="newPostBody"
         type="text" placeholder="Поделитесь котиком" className="textInputLabel
         textFamily borderRadius"

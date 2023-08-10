@@ -1,10 +1,30 @@
 import { Formik } from "formik"; //новая библиотека
 import React from "react";
 import {Field, reduxForm} from 'redux-form'
+import { maxLengthCreator, required } from "../../Utils/Validators";
+import { Input } from "../common/preloader/FormsControls/FormsControls";
 
 const LoginForm = (props) => {
+  const maxLength20 = maxLengthCreator(20);
   return (
-    // <Formik
+   
+     <form onSubmit={props.handleSubmit}>
+      <div>
+        <Field placeholder="Login" name="login" component={Input} validate={[required, maxLength20]}/>
+      </div>
+      <div>
+        <Field placeholder="Password" name="password" component={Input} validate={[required, maxLength20]} />
+      </div>
+      <div>
+        <Field type="checkbox" name="remember me" component={'input'}/> Remember me
+      </div>
+      <div>
+        <button>Login</button>
+      </div>
+    </form>
+    );
+
+ // <Formik
     //   initialValues={{ login: "", password: "", email: "", checkbox: "" }}
     //   // validate={values => {
     //   //   const errors = {};
@@ -84,23 +104,6 @@ const LoginForm = (props) => {
     //     </form>
     //   )}
     // </Formik>
-
-     <form onSubmit={props.handleSubmit}>
-      <div>
-        <Field placeholder="Login" name="login" component={'input'}/>
-      </div>
-      <div>
-        <Field placeholder="Password" name="password" component={'input'}/>
-      </div>
-      <div>
-        <Field type="checkbox" name="remember me" component={'input'}/> Remember me
-      </div>
-      <div>
-        <button>Login</button>
-      </div>
-    </form>
-    );
-
   
 };
 

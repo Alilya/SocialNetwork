@@ -92,7 +92,7 @@
     display: grid;
     grid-area: 'area';
 
-    resize: none;
+    resize: vertical;
 
 }
 .sendButton{
