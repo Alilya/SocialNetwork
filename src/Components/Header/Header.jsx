@@ -5,11 +5,12 @@ const Header=(props) => {
     return (
       <div className="header borderRadius textFamily">
         <article>Котики делают нас лучше</article>
-        <div className='auth'>
-          {props.isAuth ? <span className='auth'>{props.login}</span> : <NavLink to={'/auth'}>  Sign Up
-          </NavLink>}
-     
-
+        <div className="auth">
+          {props.isAuth ? (
+            <span className="auth"><button onClick={props.logout}> Sign Out</button></span>
+          ) : (
+            <button><NavLink to={"/login"}> Sign Up</NavLink></button>
+          )}
         </div>
       </div>
     );

@@ -3,20 +3,25 @@ import React from "react";
 import {Field, reduxForm} from 'redux-form'
 import { maxLengthCreator, required } from "../../Utils/Validators";
 import { Input } from "../common/preloader/FormsControls/FormsControls";
+import { connect } from "react-redux";
+import {login } from './../../redux/authReducer'
+import { Navigate} from "react-router-dom";
 
 const LoginForm = (props) => {
-  const maxLength20 = maxLengthCreator(20);
+  const maxLength40 = maxLengthCreator(40);
   return (
    
      <form onSubmit={props.handleSubmit}>
       <div>
-        <Field placeholder="Login" name="login" component={Input} validate={[required, maxLength20]}/>
+        <Field placeholder="email" name="email" component={Input} 
+        validate={[required, maxLength40]}/>
       </div>
       <div>
-        <Field placeholder="Password" name="password" component={Input} validate={[required, maxLength20]} />
+        <Field placeholder="Password" name="password" type='password' 
+        component={Input} validate={[required, maxLength40]} />
       </div>
       <div>
-        <Field type="checkbox" name="remember me" component={'input'}/> Remember me
+        <Field type="checkbox" name="rememberMe" component={'input'}/> Remember me
       </div>
       <div>
         <button>Login</button>
@@ -111,16 +116,25 @@ const LoginReduxForm = reduxForm({
     form: 'login',
 })(LoginForm)
 
-const Login = () => {
+const Login = (props) => {
     const onSubmit=(formData)=>{
-        console.log(formData)
+      props.login(formData.email,formData.password, formData.rememberMe)
     }
-  return (
-    <div>
-      <h1>Login</h1>
-      <LoginReduxForm onSubmit={onSubmit}/>     {/* <LoginForm /> */}
-    </div>
-  );
+    if(props.isAuth) return <Navigate to={"/profile"}/>
+    
+    else{
+      return (
+      <div>
+        <h1>Login</h1>
+        <LoginReduxForm onSubmit={onSubmit}/>
+      </div>
+    );}
+
+  
 };
 
-export default Login;
+const mapStateToProps=(state)=>({
+    isAuth: state.auth.isAuth,
+})
+
+export default connect (mapStateToProps,{login}) (Login)
