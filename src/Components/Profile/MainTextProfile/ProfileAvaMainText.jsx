@@ -1,4 +1,4 @@
-import Preloader from '../../common/preloader/preloader';
+import Preloader from '../../common/preloader/Preloader/preloader';
 import './ProfileAvaMainText.css'
 import catPhoto from '../../../assets/images/cat.webp'
 import ProfileStatus from './ProfileStatus'

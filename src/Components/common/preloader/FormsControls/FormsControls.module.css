@@ -22,3 +22,8 @@
    align-items: center;
    margin-left: 2%;
 }
+
+.errorForm{
+    color: red;
+    margin: 5px;
+}

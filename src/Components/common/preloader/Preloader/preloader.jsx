@@ -1,5 +1,5 @@
 import React from "react";
-import loader from '../../../assets/images/Ball-1.2s-78px.svg'
+import loader from './../../../../assets/images/Ball-1.2s-78px.svg'
 import style from "./preloader.module.css";
 
 const Preloader =()=>{
