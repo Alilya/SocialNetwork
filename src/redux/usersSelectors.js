@@ -1,6 +1,15 @@
-export const getUsersId=(state)=>{
+import { createSelector } from "reselect";
+
+const getUsersId=(state)=>{
     return state.usersPage.users;
 }
+
+//селектор
+
+ export const getUsers=createSelector(getUsersId,(users)=>{
+     return users //любые сложные вычисления
+ })
+
 export const getPageSize=(state)=>{
     return state.usersPage.pageSize;
 }
