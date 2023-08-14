@@ -1,4 +1,4 @@
-import { Formik } from "formik"; //новая библиотека
+//import { Formik } from "formik"; //новая библиотека
 import React from "react";
 import {Field, reduxForm} from 'redux-form'
 import { required } from "../../Utils/Validators";

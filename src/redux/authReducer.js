@@ -30,12 +30,13 @@ export const setAuthUserData = (userId,email,login, isAuth) => ({
 
 
 export const getAuthMe = ()=>(dispatch)=>{
-  authAPI.getAuthMe().then((data) => {
+  return authAPI.getMe().then((data) => {
     if(data.resultCode===0){
         let {id,email,login}=data.data;
         dispatch(setAuthUserData(id, email, login, true));
     }
   });
+   
 }
 
 export const login = (email,password,rememberMe )=>(dispatch)=>{
@@ -59,6 +60,5 @@ export const logout = ()=>(dispatch)=>{
     }
   });
 }
-
 
 export default authReducer;
