@@ -1,63 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProfileAvaMainText.css";
 
-class ProfileStatus extends React.Component {
-  state = {
-    editMode: false,
-    status : this.props.status
-  };
+const ProfileStatus =(props)=> {
+  let [editMode, setEditMode] = useState(false);
+  let [status, setStatus] = useState(props.status);
 
-  activeEditMode=()=> {
-    this.setState({//выполняется асинхронно
-      editMode: true,
-    });
-    //this.forceUpdate(); костыль
+  const activeEditMode=()=> {
+    setEditMode(true);
   }
-  deActiveEditMode=()=> {
-    this.setState({
-      editMode: false,
-      status : this.props.status
-    });
-
-    this.props.updateUserStatus(this.state.status);
+  const deActiveEditMode=()=> {
+    setEditMode(false);
+    props.updateUserStatus(status);
   }
-  onStatusChange = (e)=>{
-    this.setState({
-      status: e.currentTarget.value,
-    })
+  const onStatusChange = (e)=>{
+    setStatus(e.currentTarget.value)
   }
-
-  componentDidUpdate(prevProps, prevState){
-    if(prevProps.status!== this.props.status){
-      this.setState({
-        status: this.props.status
-      })
-    }
-  }
-
-
-  render() {
+  
     return (
       <div>
-        {!this.state.editMode && (
+        {!editMode && (
           <div>
-            <span onDoubleClick={this.activeEditMode}>
-              {this.props.status || "Статуса пока нет("}
+            <span onDoubleClick={activeEditMode}>
+              {props.status || "Статуса пока нет("}
             </span>
           </div>
         )}
-        {this.state.editMode && (
+        {editMode && (
           <div className="profileAbout">
             <input
-              onChange={this.onStatusChange}
+              onChange={onStatusChange}
               autoFocus={true}
-              onBlur={this.deActiveEditMode}
-              value={this.state.status}
+              onBlur={deActiveEditMode}
+              value={status}
             />
           </div>
         )}
       </div>
     );
-  }
+  
 }
+
 export default ProfileStatus;
