@@ -1,39 +1,48 @@
-import React from 'react'
-import './InputPost.css'
-import NewPostProfile from '../NewPostProfile/NewPostsProfile';
+import React, { memo } from "react";
+import "./InputPost.css";
+import NewPostProfile from "../NewPostProfile/NewPostsProfile";
 import { Field, reduxForm } from "redux-form";
-import { maxLengthCreator, required } from '../../../Utils/Validators';
-import { Textarea } from '../../common/preloader/FormsControls/FormsControls';
+import { maxLengthCreator, required } from "../../../Utils/Validators";
+import { Textarea } from "../../common/preloader/FormsControls/FormsControls";
 
-const InputPost=(props) => {
-  let postsElements=props.profilePage.postDataBase.map(post=>
-    <NewPostProfile key={post.id} textPost={post.post} countLike={post.countLike}/>
-  )
+const InputPost = (props)=>{
+    let postsElements = props.profilePage.postDataBase.map((post) => (
+      <NewPostProfile
+        key={post.id}
+        textPost={post.post}
+        countLike={post.countLike}
+      />
+    ));
 
-  let addNewPost=(values)=>{
-    props.addPost(values.newPostBody)
-  }
+    let addNewPost = (values) => {
+      props.addPost(values.newPostBody);
+    };
     return (
       <div>
-       <AddPostFormRedux onSubmit={addNewPost} />
+        <AddPostFormRedux onSubmit={addNewPost} /> 
         <div>{postsElements}</div>
       </div>
     );
 
-}
+};
+
 const maxLength10 = maxLengthCreator(10);
 
-const AddPostForm =(props)=>{
+const AddPostForm = (props) => {
   return (
     <form
       className="InputPost backgroundColor borderRadius"
       onSubmit={props.handleSubmit}
     >
-      <Field component={Textarea} validate={[required, maxLength10]}
+      <Field
+        component={Textarea}
+        validate={[required, maxLength10]}
         name="newPostBody"
-        type="text" placeholder="Поделитесь котиком" className="textInputLabel
+        type="text"
+        placeholder="Поделитесь котиком"
+        className="textInputLabel
         textFamily borderRadius"
-        ></Field>
+      ></Field>
 
       <button className="buttonCatPaw backgroundColorItem borderRadius">
         <img
@@ -44,11 +53,10 @@ const AddPostForm =(props)=>{
       </button>
     </form>
   );
-}
+};
 
-const AddPostFormRedux =reduxForm({
-  form:'AddPostForm'
-})(AddPostForm)
-
+const AddPostFormRedux = reduxForm({
+  form: "AddPostForm",
+})(AddPostForm);
 
 export default InputPost;

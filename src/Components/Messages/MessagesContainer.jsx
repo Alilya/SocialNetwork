@@ -1,3 +1,4 @@
+import React from 'react';
 import MessagesAll from "./MessagesAll";
 import { addMessageActionCreator } from "../../redux/messageReducer";
 import { connect } from "react-redux";

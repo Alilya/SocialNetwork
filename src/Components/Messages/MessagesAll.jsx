@@ -30,6 +30,7 @@ const MessagesAll = (props) => {
     </div>
   );
 };
+
 const maxLength50 = maxLengthCreator(50);
 const AddMessageForm =(props)=>{
   return (

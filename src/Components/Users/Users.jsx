@@ -4,14 +4,12 @@ import cat from "../../assets/images/cat.webp";
 import { NavLink, Navigate } from "react-router-dom";
 
 
-let Users = (props) => {
+let Users = React.memo((props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize/1000);
   let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
-  
-
   return (
     <div>
       <div className={style.page}>
@@ -70,6 +68,6 @@ let Users = (props) => {
       ))}
     </div>
   );
-};
+});
 
 export default Users;

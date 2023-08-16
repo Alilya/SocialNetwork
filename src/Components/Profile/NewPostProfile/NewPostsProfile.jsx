@@ -1,12 +1,12 @@
 import './NewPostsProfile.css';
 import React, { useState } from "react";
 
-const NewPostProfile=(props) => {
+const NewPostProfile = React.memo((props) => {
   let [likes, setLikes] = useState(0)
   let addLike=()=>{
     setLikes(likes+1)
   }
-
+  
     return (
       <div>
         <div className="NewPostProfile">
@@ -29,5 +29,6 @@ const NewPostProfile=(props) => {
       </div>
     );
 
-}
+})
+
 export default NewPostProfile;
