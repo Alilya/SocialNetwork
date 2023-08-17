@@ -7,30 +7,38 @@ import { connect } from "react-redux";
 import {login } from './../../redux/authReducer'
 import { Navigate} from "react-router-dom";
 import style from './../common/preloader/FormsControls/FormsControls.module.css'
+import classes from './login.module.css'
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
   return (
-   
-     <form onSubmit={props.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div>
-        <Field placeholder="email" name="email" component={Input} 
-        validate={[required]}/>
+        <Field
+          placeholder="email"
+          name="email"
+          component={Input}
+          validate={[required]}
+        />
       </div>
       <div>
-        <Field placeholder="Password" name="password" type='password' 
-        component={Input} validate={[required]} />
+        <Field
+          placeholder="Password"
+          name="password"
+          type="password"
+          component={Input}
+          validate={[required]}
+        />
       </div>
       <div>
-        <Field type="checkbox" name="rememberMe" component={'input'}/> Remember me
+        <Field type="checkbox" name="rememberMe" component={"input"} /> Remember
+        me
       </div>
       <div>
-        {props.error && <div className={style.errorForm}>
-          {props.error}
-        </div>}
-        <button>Login</button>
+        {error && <div className={style.errorForm}>{error}</div>}
+        <button className={classes.button}>Login</button>
       </div>
     </form>
-    );
+  );
 
  // <Formik
     //   initialValues={{ login: "", password: "", email: "", checkbox: "" }}
@@ -119,21 +127,21 @@ const LoginReduxForm = reduxForm({
     form: 'login',
 })(LoginForm)
 
-const Login = (props) => {
+const Login = ({login,isAuth }) => {
     const onSubmit=(formData)=>{
-      props.login(formData.email,formData.password, formData.rememberMe)
+     login(formData.email,formData.password, formData.rememberMe)
     }
-    if(props.isAuth) return <Navigate to={"/profile"}/>
-    
+    if(isAuth) return <Navigate to={"/profile"}/>
     else{
       return (
-      <div>
-        <h1>Login</h1>
-        <LoginReduxForm onSubmit={onSubmit}/>
-      </div>
-    );}
-
-  
+        <div className={classes.mainform}>
+          <div className={classes.form}>
+            <h1 className={classes.title}>Login</h1>
+            <LoginReduxForm onSubmit={onSubmit} className={classes.submit} />
+          </div>
+        </div>
+      );
+    }
 };
 
 const mapStateToProps=(state)=>({

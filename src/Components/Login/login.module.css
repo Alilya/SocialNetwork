@@ -1,0 +1,33 @@
+.mainform{
+    display: flex;
+    justify-content: center;
+}
+.form{
+    display: flex-grid;
+    margin: 2%;
+
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "title"
+    "submit";
+    grid-gap: 15px;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    grid-area: 'title';
+}
+.sumbit{
+    display: flex;
+    justify-content: center;
+    grid-area: 'submit';
+    margin: 1%;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    margin-top: 10%;
+    width: 100%;
+}

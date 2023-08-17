@@ -1,4 +1,4 @@
-const ADD_MESSAGE = "ADD-MESSAGE";
+const ADD_MESSAGE = "message/ADD-MESSAGE";
 
 let initialState = {
   dialogsDataBase: [
@@ -23,7 +23,6 @@ let initialState = {
 };
 
 const messageReducer = (state = initialState, action) => {
-
   switch (action.type) {
     case ADD_MESSAGE:
         let stateCopy = {

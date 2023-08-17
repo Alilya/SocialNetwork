@@ -1,12 +1,10 @@
 .formControl{
-    width: 70%;
-    margin-right: 20px;
-    padding-right: 0;
+    width: max-content;
 }
 
 .formControl.error input{
     color: red;
- 
+    width: max-content;
 }
 .error{
     margin-bottom: 1%;
