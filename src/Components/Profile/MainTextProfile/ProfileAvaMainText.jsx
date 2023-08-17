@@ -12,7 +12,7 @@ const ProfileAvaMainText=(props) => {
     return (
       <div className="ProfileAvaMainText backgroundColor borderRadius">
         <div className="profileAva">
-          <img
+          <img alt='profile avatar'
             src={
               !props.profile.photos.small
                 ? catPhoto

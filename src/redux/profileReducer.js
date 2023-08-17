@@ -3,7 +3,7 @@ import { profileAPI, userAPI } from "../API/API";
 const ADD_POST = "ADD-POST";
 const SET_PROFILE = 'SET-PROFILE'
 const SET_STATUS = 'SET_STATUS'
-
+const DELETE_POST = 'DELETE-POST'
 let initialState = {
   postDataBase: [
     { id: 1, post: "Привет", countLike: "15" },
@@ -27,6 +27,13 @@ const profileReducer = (state = initialState, action) => {
         postDataBase: [newPost, ...state.postDataBase],
       };
       return stateCopy;
+
+    case DELETE_POST:
+      return {
+        ...state,
+        postDataBase: [...state.postDataBase.filter(p=>p.id!=action.postId)],
+      };
+
     case SET_PROFILE:
       return { ...state, profile: action.profile };
 
@@ -42,7 +49,10 @@ export const addPost = (newPostBody) => ({
   type: ADD_POST,
   newPostBody
 });
-
+export const deletePost = (postId) => ({
+  type: DELETE_POST,
+  postId
+});
 export const setUsersProfile = (profile) => ({
   type: SET_PROFILE,
   profile,
@@ -52,6 +62,7 @@ export const setStatus = (status) => ({
   type: SET_STATUS,
   status
 });
+
 
 export const getUserProfile =(userId)=> (dispatch)=>{
     userAPI.getProfile(userId)

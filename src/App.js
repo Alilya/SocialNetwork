@@ -12,6 +12,7 @@ import {initializeApp} from './redux/appReducer'
 import { compose } from 'redux';
 import Preloader from './Components/common/preloader/Preloader/preloader';
 
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
 class App extends React.Component {
@@ -22,21 +23,26 @@ class App extends React.Component {
   render() {
     if(!this.props.initialized) return <Preloader/>
         return (
-          <div className="mainSocialNetwork">
-            <HeaderContainer />
-            <Menu />
-            <div className="content">
-              <Routes>
-                <Route
-                  path="/profile/:userId?"
-                  element={<ProfileContainer />}
-                />
-                <Route path="/messages/*" element={<MessagesContainer />} />
-                <Route path="/users" element={<UsersContainer />} />
-                <Route path="/login" element={<Login />} />
-              </Routes>
-            </div>
-          </div>
+        
+                <div className="mainSocialNetwork">
+                  <HeaderContainer />
+                  <Menu />
+                  <div className="content">
+                    <Routes>
+                      <Route
+                        path="/profile/:userId?"
+                        element={<ProfileContainer />}
+                      />
+                      <Route
+                        path="/messages/*"
+                        element={<MessagesContainer />}
+                      />
+                      <Route path="/users" element={<UsersContainer />} />
+                      <Route path="/login" element={<Login />} />
+                    </Routes>
+                  </div>
+                </div>
+              
         );
   }
 }

@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import "./InputPost.css";
 import NewPostProfile from "../NewPostProfile/NewPostsProfile";
 import { Field, reduxForm } from "redux-form";
