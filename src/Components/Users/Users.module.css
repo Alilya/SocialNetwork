@@ -31,12 +31,7 @@
     background-color: #fcf5ee;
     border-radius: 10px;
 }
-.img{
-    display: grid;
-    grid-area: 'ava';
-    width: 100%;
-    border-radius: 50%;
-}
+
 .text{
     display: grid;
     height: 40%;

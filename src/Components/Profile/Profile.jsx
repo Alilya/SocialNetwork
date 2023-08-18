@@ -12,7 +12,7 @@ const Profile = (props) => {
         status={props.status}
         updateUserStatus={props.updateUserStatus}
       />
-      <InputPostContainer />
+      <InputPostContainer/>
     </div>
   );
 }

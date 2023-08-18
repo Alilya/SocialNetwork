@@ -1,7 +1,8 @@
 import React from "react";
 import style from "./Users.module.css";
-import cat from "../../assets/images/cat.webp";
+
 import { NavLink, Navigate } from "react-router-dom";
+import PhotoAva from "../common/Photos/PhotoAva";
 
 let UserCard = ({ user, followingInProgress, isAuth, unfollow, follow }) => {
   const commonFollowUnfollow = (type, text) => {
@@ -24,11 +25,14 @@ let UserCard = ({ user, followingInProgress, isAuth, unfollow, follow }) => {
   return (
     <div className={style.userBlock}>
       <NavLink to={"/profile/" + user.id}>
-        <img
+
+      <PhotoAva photo={user.photos.small}/>
+      {/* <PhotoAva photo={props.photo}/> */}
+        {/* <img
           src={user.photos.small != null ? user.photos.small : cat}
           alt="catAva"
           className={style.img}
-        />
+        /> */}
       </NavLink>
       <article className={style.name}>{user.name}</article>
       {user.followed

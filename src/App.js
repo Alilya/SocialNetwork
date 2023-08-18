@@ -1,6 +1,6 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Provider, connect } from 'react-redux';
 import {initializeApp} from './redux/appReducer'
 import { compose } from 'redux';
 import './App.css';
@@ -12,6 +12,7 @@ import ProfileContainer, { withRouter } from './Components/Profile/ProfileContai
 import HeaderContainer from './Components/Header/HeaderContainer';
 import Login from './Components/Login/Login';
 import Preloader from './Components/common/Preloader/preloader';
+import store from './redux/reduxStore';
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
@@ -49,8 +50,18 @@ const mapStateToProps=(state)=>({
   initialized: state.app.initialized,
 })
 
-export default compose(
+let AppContainer =  compose(
   withRouter,
   connect(mapStateToProps, { initializeApp })
   )(App)
 
+ const SocialNetwork=()=>{
+  return <BrowserRouter>
+      <Provider store={store}>
+        <React.StrictMode>
+          <AppContainer />
+        </React.StrictMode>
+      </Provider>
+    </BrowserRouter>
+}
+export default SocialNetwork;

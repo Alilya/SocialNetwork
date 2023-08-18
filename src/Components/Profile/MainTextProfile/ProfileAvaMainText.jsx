@@ -3,6 +3,7 @@ import Preloader from '../../common/Preloader/preloader';
 import './ProfileAvaMainText.css'
 import catPhoto from '../../../assets/images/cat.webp'
 import ProfileStatus from './ProfileStatus'
+import PhotoAva from '../../common/Photos/PhotoAva';
 
 const ProfileAvaMainText=(props) => {
   if(!props.profile){
@@ -12,13 +13,7 @@ const ProfileAvaMainText=(props) => {
     return (
       <div className="ProfileAvaMainText backgroundColor borderRadius">
         <div className="profileAva">
-          <img alt='profile avatar'
-            src={
-              !props.profile.photos.small
-                ? catPhoto
-                : props.profile.photos.small
-            }
-          />
+        <PhotoAva photo={props.profile.photos.small}/>
         </div>
         <div>
           <div className="profileName">

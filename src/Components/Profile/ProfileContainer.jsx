@@ -7,7 +7,6 @@ import WithAuthRedirect from "../../Hoc/WithAuthRedirect";
 import { compose } from "redux";
 
 export function withRouter(Children){
-
   return(props)=>{
      const match  = {params: useParams()};
      return <Children {...props}  match = {match}/>

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 let mapStateToProps=(state)=>{
   return{
-    profilePage:state.profilePage
+    profilePage:state.profilePage,
   }
 }
 let mapDispatchToProps=(dispatch)=>{
@@ -12,6 +12,7 @@ let mapDispatchToProps=(dispatch)=>{
     addPost:(newPostBody)=>{ dispatch(addPost(newPostBody));},
   }
 }
+
 const InputPostContainer = connect(mapStateToProps,
   mapDispatchToProps)(InputPost);
 export default InputPostContainer;

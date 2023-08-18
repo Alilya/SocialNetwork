@@ -30,10 +30,10 @@
     width: 50px;
 }
 .likeButton{
-    width: 60px;
     display: inline-block;
     background-color: #fff;
     border-color: #ffffff;
+    border-radius: 50%;
 }
 .countLike{
     font-size: 15px;
@@ -42,4 +42,9 @@
 .like{
     display: inline-block;
 
+}
+.NewPostProfile > img{
+    display: grid;
+    width: 40%;
+    border-radius: 50%;
 }
