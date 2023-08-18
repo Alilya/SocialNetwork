@@ -1,5 +1,11 @@
+.InputPost{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}  
 
-.textInputLabel{
+ .textInputLabel{
     display: grid;
     grid-area:  InputPost;
    
@@ -14,9 +20,13 @@
     font-weight: 400;
     font-size: 23px;
     line-height: 100%;
+
     margin: 20px;
     margin-right: 0px;
-    width: 100%;
+    /* padding-left: 30px;
+    padding-right: 30px; */
+
+    width: 100%; 
      
 }
 
@@ -31,18 +41,9 @@
     grid-area: Button;
     display: flex;
     justify-content: center;
-    margin: 20px;
+    align-items: center;
     width: 5em;
     height: 5em;
-    margin-left: 1%;
-    margin-right: 5px; 
+    margin-left: 5%; 
        
-}
-.InputPost{
-    height: max-content;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
+} 

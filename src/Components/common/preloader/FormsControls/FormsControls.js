@@ -4,7 +4,7 @@ export const Textarea=({input, meta, ...props})=>{
     const hasError = meta.touched && meta.error;
     return (
       <div   className={style.formControl + " " + (hasError? style.error :'')}>
-        <div>
+        <div className={style.form}>
          <textarea {...input} {...props}/>  {/* contentEditable="true"*/}  
         </div>
         <div>
