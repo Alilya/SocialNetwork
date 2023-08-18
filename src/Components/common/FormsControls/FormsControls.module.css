@@ -16,10 +16,6 @@
 
 .formControl.error span{
    color: red;
-   /* display: flex;
-   justify-content: center;
-   align-items: center;
-   margin-left: 2%; */
 }
 
 .errorForm{

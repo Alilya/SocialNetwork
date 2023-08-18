@@ -4,7 +4,7 @@ import DialogItem from "./DialogItem/Dialogs";
 import MessageItem from "./MessageItem/Messages";
 import { Field, reduxForm } from "redux-form";
 import { maxLengthCreator, required } from "../../Utils/Validators";
-import { Textarea } from "../common/preloader/FormsControls/FormsControls";
+import { Textarea } from "../common/FormsControls/FormsControls";
 
 const MessagesAll = (props) => {
 

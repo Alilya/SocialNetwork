@@ -3,7 +3,7 @@ import "./InputPost.css";
 import NewPostProfile from "../NewPostProfile/NewPostsProfile";
 import { Field, reduxForm } from "redux-form";
 import { maxLengthCreator, required } from "../../../Utils/Validators";
-import { Textarea } from "../../common/preloader/FormsControls/FormsControls";
+import { Textarea } from "../../common/FormsControls/FormsControls";
 
 const InputPost = (props)=>{
     let postsElements = props.profilePage.postDataBase.map((post) => (

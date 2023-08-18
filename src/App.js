@@ -11,7 +11,7 @@ import UsersContainer from './Components/Users/UsersContainer';
 import ProfileContainer, { withRouter } from './Components/Profile/ProfileContainer';
 import HeaderContainer from './Components/Header/HeaderContainer';
 import Login from './Components/Login/Login';
-import Preloader from './Components/common/preloader/Preloader/preloader';
+import Preloader from './Components/common/Preloader/preloader';
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
