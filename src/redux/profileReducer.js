@@ -1,4 +1,4 @@
-import { profileAPI, userAPI } from "../API/API";
+import { profileAPI} from "../API/API";
 
 const ADD_POST = "profile/ADD-POST";
 const SET_PROFILE = 'profile/SET-PROFILE'
@@ -32,7 +32,7 @@ const profileReducer = (state = initialState, action) => {
     case DELETE_POST:
       return {
         ...state,
-        postDataBase: [...state.postDataBase.filter(p=>p.id!=action.postId)],
+        postDataBase: [...state.postDataBase.filter(p=>p.id!==action.postId)],
       };
 
     case SET_PROFILE:
@@ -66,7 +66,7 @@ export const setStatus = (status) => ({
 
 
 export const getUserProfile =(userId)=> async (dispatch)=>{
-    let res = await userAPI.getProfile(userId)
+    let res = await profileAPI.getProfile(userId)
       dispatch(setUsersProfile(res.data));
 }
 
