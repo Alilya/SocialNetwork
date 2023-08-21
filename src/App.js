@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import { Provider, connect } from 'react-redux';
 import {initializeApp} from './redux/appReducer'
 import { compose } from 'redux';
@@ -54,13 +54,13 @@ let AppContainer =  compose(
   connect(mapStateToProps, { initializeApp })
   )(App)
 
- const SocialNetwork=()=>{
-  return <BrowserRouter>
+ const SocialNetwork=(props)=>{
+  return <HashRouter> 
       <Provider store={store}>
         <React.StrictMode>
           <AppContainer />
         </React.StrictMode>
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
 }
 export default SocialNetwork;

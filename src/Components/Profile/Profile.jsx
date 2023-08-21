@@ -7,10 +7,12 @@ const Profile = (props) => {
   return (
     <div className="profile content">
       <ProfileAvaMainText
+        isOwner={props.isOwner}
         className="ProfileAvaMainText"
         profile={props.profile}
         status={props.status}
         updateUserStatus={props.updateUserStatus}
+        savePhoto = {props.savePhoto}
       />
       <InputPostContainer/>
     </div>

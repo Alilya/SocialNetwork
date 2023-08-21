@@ -11,7 +11,7 @@ import classes from './login.module.css'
 
 const LoginForm = ({handleSubmit, error}) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} title="Используйте Email: free@samuraijs.com и Password: free ">
       <div>
         <Field
           placeholder="email"
