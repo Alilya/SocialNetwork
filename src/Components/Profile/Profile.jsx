@@ -14,7 +14,6 @@ const Profile = (props) => {
         updateUserStatus={props.updateUserStatus}
         savePhoto = {props.savePhoto}
       />
-      <InputPostContainer/>
     </div>
   );
 }

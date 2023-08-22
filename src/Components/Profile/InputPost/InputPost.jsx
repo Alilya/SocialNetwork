@@ -11,6 +11,7 @@ const InputPost = (props)=>{
         key={post.id}
         textPost={post.post}
         countLike={post.countLike}
+        profile ={props.profilePage.profile}
       />
     ));
 

@@ -2,7 +2,7 @@ import './NewPostsProfile.css';
 import React, { useState } from "react";
 import PhotoAva from '../../common/Photos/PhotoAva';
 
-const NewPostProfile = React.memo((props) => {
+const NewPostProfile = (props) => {
   let [likes, setLikes] = useState(4)
   let addLike=()=>{
     setLikes(likes+1)
@@ -11,7 +11,7 @@ const NewPostProfile = React.memo((props) => {
       <div>
         <div className="NewPostProfile">
 
-          <PhotoAva photo={props.photo}/>
+          <PhotoAva photo={props.profile.photos.small}/>
 
           <div className="ContentPost textFamily">{props.textPost}</div>
           <div className="like">
@@ -30,6 +30,6 @@ const NewPostProfile = React.memo((props) => {
       </div>
     );
 
-})
+}
 
 export default NewPostProfile;

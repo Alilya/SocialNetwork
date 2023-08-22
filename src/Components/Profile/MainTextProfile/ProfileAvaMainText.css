@@ -4,11 +4,11 @@
     grid-template-rows: 1fr auto;
     grid-template-columns: 2fr 4fr;
     grid-template-areas: "Img Text"
-    "Img Input"; 
+    "Img file";
     grid-area: AvaText;
 
     padding-top: 20px;
-    padding-left: 5%;
+    padding-left: 1%;
 
     font-weight: 600;
     font-size: 16px;
@@ -31,12 +31,12 @@
     
 }
 .profileAva img{
-    width: 100%;
-    height: 100%;
-    min-width: 10em;
-    min-height: 10em;
+    max-width: 220px;
+    max-height: 220px;
+
     border-radius: 100%;
-   
+    margin-left: 5%;
+    object-fit: cover;
 }
 
 .profileAbout span :first-child{
@@ -54,10 +54,14 @@
     display: grid;
     grid-area: Text;
 
-    display: inline-flex;
+    display: block;
     color: #494848;
 
     padding-left: 5%;
+}
+.status{
+    margin-bottom: 10%;
+    font-size: large;
 }
 .profileAbout span{
     list-style-type: none;
@@ -77,7 +81,7 @@
 }
 .form-group {
     display: grid;
-    grid-area: Input;
+    grid-area: file;
     align-content: center;
     justify-content: end;
     margin-right: 10%;
@@ -121,4 +125,20 @@
 .label:hover .title {
     color: #000
     
+}
+
+.contacts{
+    padding-right: 10%;
+    font-size: 10px;
+}
+.contactsSum{
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    padding-right: 10%;
+}
+
+.buttonEdit{
+    display: flex;
+    justify-content: end;
 }

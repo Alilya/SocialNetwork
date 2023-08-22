@@ -98,4 +98,5 @@ export const savePhoto =(file)=> async (dispatch)=>{
       dispatch(savePhotoSuccess(res.data.data.photos));
     }
 } 
+
 export default profileReducer;
