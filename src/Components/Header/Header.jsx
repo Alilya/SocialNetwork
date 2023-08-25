@@ -6,7 +6,7 @@ const Header=(props) => {
 
     return (
       <div className="header borderRadius textFamily">
-        <article>Котики делают нас лучше</article>
+        <article>Мяу</article>
         <div className="auth">
           {props.isAuth ? (
             <span className="auth"><button onClick={props.logout}> Sign Out</button></span>

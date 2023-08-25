@@ -3,8 +3,7 @@
     width: 100%;
     grid-template-rows: 1fr auto;
     grid-template-columns: 2fr 4fr;
-    grid-template-areas: "Img Text"
-    "Img file";
+    grid-template-areas: "Img Text file";
     grid-area: AvaText;
 
     padding-top: 20px;
@@ -83,7 +82,7 @@
     display: grid;
     grid-area: file;
     align-content: center;
-    justify-content: end;
+    justify-content: start;
     margin-right: 10%;
     margin-bottom: 5%;
 }
@@ -132,13 +131,21 @@
     font-size: 10px;
 }
 .contactsSum{
-    display: flex;
-    justify-content: start;
-    align-items: end;
     padding-right: 10%;
 }
 
 .buttonEdit{
-    display: flex;
-    justify-content: end;
+    display: inline-block;
+    justify-self: end;
+    width: max-content;
+    height: max-content;
+    margin-right: 20px;
+    margin-top: 0px;
+
+}
+.editText{
+    text-transform:lowercase;
+}
+.profileEdit{
+margin: 10px;
 }
