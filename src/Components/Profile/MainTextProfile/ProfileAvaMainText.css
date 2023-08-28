@@ -17,6 +17,7 @@
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: 'Montserrat Alternates';
+ 
 }
 
 .profileAva{
@@ -141,6 +142,8 @@
     height: max-content;
     margin-right: 20px;
     margin-top: 0px;
+    background-color: #edebe9;
+    border-radius: 4px;
 
 }
 .editText{
